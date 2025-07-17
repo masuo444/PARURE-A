@@ -46,7 +46,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // アニメーション対象の要素を監視
 document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.product-card, .testimonial, .guarantee__item');
+    const animateElements = document.querySelectorAll('.testimonial, .guarantee__item');
     
     animateElements.forEach(el => {
         el.style.opacity = '0';
