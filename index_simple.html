@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOMUS PARURE - 1300年の伝統が生み出した枡アクセサリー</title>
+    <meta name="description" content="1300年の伝統技法と現代デザインが融合した唯一無二の枡アクセサリーブランド。森・天・極の3つのコレクションで、あなただけの特別なジュエリーを。">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fefefe;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        
+        .nav__logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+        
+        .nav__list {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav__link {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav__link:hover {
+            color: #d4af37;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero__content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .hero__brand-mark {
+            font-size: 1.2rem;
+            letter-spacing: 0.2em;
+            margin-bottom: 2rem;
+            color: #d4af37;
+        }
+        
+        .hero__title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        
+        .hero__subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .hero__cta {
+            display: inline-block;
+            background: #d4af37;
+            color: #1a1a1a;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .hero__cta:hover {
+            background: #f4c842;
+            transform: translateY(-2px);
+        }
+        
+        /* Collections Section */
+        .collections {
+            padding: 8rem 0;
+            background: #fefefe;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #1a1a1a;
+        }
+        
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .collection-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .collection-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .collection-card__content {
+            padding: 2rem;
+        }
+        
+        .collection-card__title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+        
+        .collection-card__description {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        
+        .collection-card__link {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer__content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer__title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #d4af37;
+        }
+        
+        .footer__bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav__list {
+                display: none;
+            }
+            
+            .hero__title {
+                font-size: 2.5rem;
+            }
+            
+            .collections-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__logo">
+                <a href="index.html">
+                    <span class="nav__logo-text">FOMUS PARURE</span>
+                </a>
+            </div>
+            
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#story" class="nav__link">ブランド</a></li>
+                    <li class="nav__item"><a href="#collections" class="nav__link">コレクション</a></li>
+                    <li class="nav__item"><a href="#story" class="nav__link">ストーリー</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">お問い合わせ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ヒーローセクション -->
+        <section class="hero">
+            <div class="hero__content">
+                <div class="hero__brand-mark">FOMUS PARURE</div>
+                <h1 class="hero__title">
+                    <span class="hero__title-main">千三百年の宝物を現代に</span>
+                </h1>
+                <div class="hero__subtitle">
+                    <p class="hero__subtitle-text">神聖なる枡の文化を纏い、</p>
+                    <p class="hero__subtitle-text">あなただけの物語を紡ぐ特別な体験</p>
+                </div>
+                <a href="#collections" class="hero__cta">コレクションを見る</a>
+            </div>
+        </section>
+
+        <!-- コレクションセクション -->
+        <section class="collections" id="collections">
+            <div class="container">
+                <h2 class="section-title">Collections</h2>
+                <p style="text-align: center; margin-bottom: 3rem; color: #666;">森・天・極 - 伝統を纏う匠のラインナップ</p>
+                
+                <div class="collections-grid">
+                    <div class="collection-card">
+                        <div class="collection-card__content">
+                            <h3 class="collection-card__title">森 (Mori) - Brand Original</h3>
+                            <p class="collection-card__description">
+                                自然の恵みとヒノキの温もりが感じられる、日常に溶け込むシンプルなデザイン。ブランドオリジナルの多彩なライン。
+                            </p>
+                            <a href="https://fomusparure.official.ec/items/all" target="_blank" class="collection-card__link">商品を見る →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="collection-card">
+                        <div class="collection-card__content">
+                            <h3 class="collection-card__title">天 (Ten) - Full Custom</h3>
+                            <p class="collection-card__description">
+                                完全オーダーメイドのオートジュエリー。お客様とデザイナー、職人が協働して創り上げる世界に一つの作品。
+                            </p>
+                            <a href="https://fomusparure.official.ec/items/all" target="_blank" class="collection-card__link">商品を見る →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="collection-card">
+                        <div class="collection-card__content">
+                            <h3 class="collection-card__title">極 (Kiwami) - Ultimate Set</h3>
+                            <p class="collection-card__description">
+                                年間10セット限定の最高峰マスターピース。究極の4点セットで、比類なき威光を纏うFOMUS PARUREの技術と美意識の集大成。
+                            </p>
+                            <a href="https://fomusparure.official.ec/items/all" target="_blank" class="collection-card__link">商品を見る →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ストーリーセクション -->
+        <section class="story" id="story" style="padding: 8rem 0; background: #f8f9fa;">
+            <div class="container">
+                <h2 class="section-title">Brand Story</h2>
+                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <p style="font-size: 1.2rem; color: #666; margin-bottom: 2rem;">
+                        FOMUS PARUREは、1300年の歴史が息づく"枡"を、神社仏閣にも使用される国産ヒノキという最高級素材を組み合わせた、唯一無二のラグジュアリーアートジュエリーです。
+                    </p>
+                    <p style="font-size: 1.1rem; color: #666;">
+                        私たちは、枡のシンプルながらも奥深い造形美に、芸術性と職人技を注ぎ込み、空間を彩るアートピースとしての側面と、身につけることで感じる洗練の美を両立させました。
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3 class="footer__title">FOMUS PARURE</h3>
+                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 1rem;">
+                        1300年の伝統技法と現代デザインが融合した、唯一無二の枡アクセサリーブランド。
+                    </p>
+                    <div>
+                        <p style="color: rgba(255,255,255,0.8);">📧 info@fomus-parure.com</p>
+                        <p style="color: rgba(255,255,255,0.8);">📞 03-1234-5678</p>
+                    </div>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 style="color: #d4af37; margin-bottom: 1rem;">コレクション</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="https://fomusparure.official.ec/items/all" target="_blank" style="color: rgba(255,255,255,0.8); text-decoration: none;">森 (Mori)</a></li>
+                        <li><a href="https://fomusparure.official.ec/items/all" target="_blank" style="color: rgba(255,255,255,0.8); text-decoration: none;">天 (Ten)</a></li>
+                        <li><a href="https://fomusparure.official.ec/items/all" target="_blank" style="color: rgba(255,255,255,0.8); text-decoration: none;">極 (Kiwami)</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 style="color: #d4af37; margin-bottom: 1rem;">公式サイト</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="https://fomusparure.official.ec" target="_blank" style="color: rgba(255,255,255,0.8); text-decoration: none;">ECサイト</a></li>
+                        <li><a href="https://github.com/masuo444/fomusparure-japan" target="_blank" style="color: rgba(255,255,255,0.8); text-decoration: none;">🔗 GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 FOMUS PARURE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
