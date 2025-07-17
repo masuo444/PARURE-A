@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>森コレクション - FOMUS PARURE</title>
+    <meta name="description" content="日常に溶け込むシンプルで美しいひのき材アクセサリー。森コレクションは FOMUS PARURE の原点となるエントリーライン。">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/collection.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__logo">
+                <a href="index.html">
+                    <span class="nav__logo-text">FOMUS PARURE</span>
+                </a>
+            </div>
+            
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html#story" class="nav__link">ブランド</a></li>
+                    <li class="nav__item"><a href="index.html#products" class="nav__link">コレクション</a></li>
+                    <li class="nav__item"><a href="index.html#story" class="nav__link">ストーリー</a></li>
+                    <li class="nav__item"><a href="index.html#contact" class="nav__link">お問い合わせ</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav__region">
+                <div class="region-selector">
+                    <select id="region-select" class="region-selector__select">
+                        <option value="jp">日本 (¥)</option>
+                        <option value="us">海外 ($)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="nav__mobile">
+                <button class="nav__toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- コレクションヒーロー -->
+        <section class="collection-hero" style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%); color: white;">
+            <div class="container">
+                <div class="collection-hero__content">
+                    <div class="collection-hero__text">
+                        <div class="collection-hero__breadcrumb">
+                            <a href="index.html" style="color: rgba(255,255,255,0.7);">ホーム</a> / <a href="index.html#products" style="color: rgba(255,255,255,0.7);">コレクション</a> / 森
+                        </div>
+                        <h1 class="collection-hero__title">
+                            <span class="collection-hero__title-ja" style="color: #ffffff;">森</span>
+                            <span class="collection-hero__title-en" style="color: rgba(255,255,255,0.8);">Mori - Brand Original</span>
+                        </h1>
+                        <p class="collection-hero__description" style="color: rgba(255,255,255,0.9);">
+                            自然の恵みとヒノキの温もりが感じられる、<br>
+                            日常に溶け込むシンプルなデザイン。<br>
+                            ブランドオリジナルの多彩なライン。
+                        </p>
+                        <div class="collection-hero__features">
+                            <div class="feature-badge" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); color: white;">
+                                <span class="feature-badge__icon">🌿</span>
+                                <span class="feature-badge__text">自然素材</span>
+                            </div>
+                            <div class="feature-badge" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); color: white;">
+                                <span class="feature-badge__icon">✨</span>
+                                <span class="feature-badge__text">シンプルデザイン</span>
+                            </div>
+                            <div class="feature-badge" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); color: white;">
+                                <span class="feature-badge__icon">🌙</span>
+                                <span class="feature-badge__text">ブランドオリジナル</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collection-hero__image">
+                        <img src="名称未設定フォルダ/森コレクション.JPG" alt="森コレクション" style="width: 100%; height: 400px; object-fit: cover; object-position: center; border-radius: 12px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 商品ラインナップ -->
+        <section class="product-lineup">
+            <div class="container">
+                <h2 class="section-title">Product Lineup</h2>
+                <p class="section-subtitle">森コレクションの商品ラインナップ</p>
+                
+                <!-- カテゴリーナビゲーション -->
+                <div class="category-nav" style="display: flex; justify-content: center; gap: 20px; margin: 40px 0 60px 0;">
+                    <a href="#necklace-section" class="category-nav__btn" style="background: #27ae60; color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: background 0.3s ease;">ネックレス</a>
+                    <a href="#earring-section" class="category-nav__btn" style="background: #27ae60; color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: background 0.3s ease;">イヤリング・ピアス</a>
+                    <a href="#badge-section" class="category-nav__btn" style="background: #27ae60; color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: background 0.3s ease;">バッジ</a>
+                    <a href="#kanzashi-section" class="category-nav__btn" style="background: #27ae60; color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: background 0.3s ease;">かんざし</a>
+                </div>
+                
+                <style>
+                .category-nav__btn:hover {
+                    background: #2ecc71 !important;
+                    transform: translateY(-2px);
+                }
+                </style>
+                
+                <!-- ネックレス -->
+                <h3 id="necklace-section" style="font-size: 24px; margin: 60px 0 30px 0; color: #2c2c2c; font-family: 'Playfair Display', serif;">ネックレス</h3>
+                <div class="product-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-bottom: 60px;">
+                    <article class="product-detail">
+                        <div class="product-detail__image">
+                            <img src="名称未設定フォルダ/IMG_3530.JPG" alt="FOMUS PARURE NECKLACE (White)" style="width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center; border-radius: 8px;">
+                        </div>
+                        <div class="product-detail__info">
+                            <h3 class="product-detail__name">FOMUS PARURE NECKLACE (White)</h3>
+                            <p class="product-detail__description">
+                                シンプルで洗練されたホワイトネックレス。
+                            </p>
+                            <div class="product-detail__price">¥34,800 (税込)</div>
+                            <a href="https://fomusparure.official.ec/items/77962344" target="_blank" class="btn btn--primary btn--large">詳細を見る</a>
+                        </div>
+                    </article>
+
+                    <article class="product-detail">
+                        <div class="product-detail__image">
+                            <img src="名称未設定フォルダ/FOMUS Parure NECKLACE (Yellow).png" alt="FOMUS Parure NECKLACE (Yellow)" style="width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center; border-radius: 8px;">
+                        </div>
+                        <div class="product-detail__info">
+                            <h3 class="product-detail__name">FOMUS Parure NECKLACE (Yellow)</h3>
+                            <p class="product-detail__description">
+                                温かみのあるイエローネックレス。
+                            </p>
+                            <div class="product-detail__price">¥34,800 (税込)</div>
+                            <a href="https://fomusparure.official.ec/items/78729202" target="_blank" class="btn btn--primary btn--large">詳細を見る</a>
+                        </div>
+                    </article>
+
+                    <article class="product-detail">
+                        <div class="product-detail__image">
+                            <img src="名称未設定フォルダ/FOMUS PARURE NECKLACE 18k.png" alt="FOMUS PARURE NECKLACE 18k" style="width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center; border-radius: 8px;">
+                        </div>
+                        <div class="product-detail__info">
+                            <h3 class="product-detail__name">FOMUS PARURE NECKLACE 18k</h3>
+                            <p class="product-detail__description">
+                                18金を使用したプレミアムネックレス。
+                            </p>
+                            <div class="product-detail__price">¥100,000〜 (税込)</div>
+                            <a href="https://fomusparure.official.ec/items/all" target="_blank" class="btn btn--primary btn--large">詳細を見る</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- イヤリング・ピアス -->
+                <h3 id="earring-section" style="font-size: 24px; margin: 60px 0 30px 0; color: #2c2c2c; font-family: 'Playfair Display', serif;">イヤリング・ピアス</h3>
+                <div class="product-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-bottom: 60px;">
+                    <article class="product-detail">
+                        <div class="product-detail__image">
+                            <img src="名称未設定フォルダ/FOMUS PARURE earring (TONBO-DAMA blue).png" alt="FOMUS PARURE earring (TONBO-DAMA blue)" style="width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center; border-radius: 8px;">
+                        </div>
+                        <div class="product-detail__info">
+                            <h3 class="product-detail__name">FOMUS PARURE earring (TONBO-DAMA blue)</h3>
+                            <p class="product-detail__description">
+                                トンボ玉の美しい青を表現したイヤリング。
+                            </p>
+                            <div class="product-detail__price">¥39,800 (税込)</div>
+                            <a href="https://fomusparure.official.ec/items/81910452" target="_blank" class="btn btn--primary btn--large">詳細を見る</a>
+                        </div>
+                    </article>
+
+                    <article class="product-detail">
+                        <div class="product-detail__image">
+                            <img src="名称未設定フォルダ/FOMUS Parure EARRING (Red blossom).JPG" alt="FOMUS Parure EARRING (Red blossom)" style="width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center; border-radius: 8px;">
+                        </div>
+                        <div class="product-detail__info">
+                            <h3 class="product-detail__name">FOMUS Parure EARRING (Red blossom)</h3>
+                            <p class="product-detail__description">
+                                紅い花びらのモチーフのイヤリング。
+                            </p>
+                            <div class="product-detail__price">¥39,800 (税込)</div>
+                            <a href="https://fomusparure.official.ec/items/78934420" target="_blank" class="btn btn--primary btn--large">詳細を見る</a>
+                        </div>
+                    </article>
+
+                    <article class="product-detail">
+                        <div class="product-detail__image">
+                            <img src="名称未設定フォルダ/FOMUS Parure EARRING (White blossom).JPG" alt="FOMUS Parure EARRING (White blossom)" style="width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center; border-radius: 8px;">
+                        </div>
+                        <div class="product-detail__info">
+                            <h3 class="product-detail__name">FOMUS Parure EARRING (White blossom)</h3>
+                            <p class="product-detail__description">
+                                白い花びらのモチーフのイヤリング。
+                            </p>
+                            <div class="product-detail__price">¥39,800 (税込)</div>
+                            <a href="https://fomusparure.official.ec/items/77962290" target="_blank" class="btn btn--primary btn--large">詳細を見る</a>
+                        </div>
+                    </article>
+
+                    <article class="product-detail">
+                        <div class="product-detail__image">
+                            <img src="名称未設定フォルダ/IMG_4839.JPG" alt="FOMUS Parure PIERCE (TEMARI Black)" style="width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center; border-radius: 8px;">
+                        </div>
+                        <div class="product-detail__info">
+                            <h3 class="product-detail__name">FOMUS Parure PIERCE (TEMARI Black)</h3>
+                            <p class="product-detail__description">
+                                伝統的な手毬モチーフのブラックピアス。
+                            </p>
+                            <div class="product-detail__price">¥39,800 (税込)</div>
+                            <a href="https://fomusparure.official.ec/items/78934563" target="_blank" class="btn btn--primary btn--large">詳細を見る</a>
+                        </div>
+                    </article>
+
+                    <article class="product-detail">
+                        <div class="product-detail__image">
+                            <img src="名称未設定フォルダ/FOMUS Parure PIERCE (TEMARI White).JPG" alt="FOMUS Parure PIERCE (TEMARI White)" style="width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center; border-radius: 8px;">
+                        </div>
+                        <div class="product-detail__info">
+                            <h3 class="product-detail__name">FOMUS Parure PIERCE (TEMARI White)</h3>
+                            <p class="product-detail__description">
+                                伝統的な手毬モチーフのホワイトピアス。
+                            </p>
+                            <div class="product-detail__price">¥39,800 (税込)</div>
+                            <a href="https://fomusparure.official.ec/items/77962298" target="_blank" class="btn btn--primary btn--large">詳細を見る</a>
+                        </div>
+                    </article>
+
+                    <article class="product-detail">
+                        <div class="product-detail__image">
+                            <img src="名称未設定フォルダ/FOMUS Parure PIERCE (Black blossom).JPG" alt="FOMUS Parure PIERCE (Black blossom)" style="width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center; border-radius: 8px;">
+                        </div>
+                        <div class="product-detail__info">
+                            <h3 class="product-detail__name">FOMUS Parure PIERCE (Black blossom)</h3>
+                            <p class="product-detail__description">
+                                黒い花びらのモチーフのピアス。
+                            </p>
+                            <div class="product-detail__price">¥39,800 (税込)</div>
+                            <a href="https://fomusparure.official.ec/items/all" target="_blank" class="btn btn--primary btn--large">詳細を見る</a>
+                        </div>
+                    </article>
+
+                    <article class="product-detail">
+                        <div class="product-detail__image">
+                            <img src="名称未設定フォルダ/FOMUS Parure EARRING (yellow flower).png" alt="FOMUS Parure EARRING (yellow flower)" style="width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center; border-radius: 8px;">
+                        </div>
+                        <div class="product-detail__info">
+                            <h3 class="product-detail__name">FOMUS Parure EARRING (yellow flower)</h3>
+                            <p class="product-detail__description">
+                                黄色い花のモチーフのイヤリング。
+                            </p>
+                            <div class="product-detail__price">¥39,800 (税込)</div>
+                            <a href="https://fomusparure.official.ec/items/82796263" target="_blank" class="btn btn--primary btn--large">詳細を見る</a>
+                        </div>
+                    </article>
+
+                    <article class="product-detail">
+                        <div class="product-detail__image">
+                            <img src="名称未設定フォルダ/FOMUS Parure EARRING (white flower).png" alt="FOMUS Parure EARRING (white flower)" style="width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center; border-radius: 8px;">
+                        </div>
+                        <div class="product-detail__info">
+                            <h3 class="product-detail__name">FOMUS Parure EARRING (white flower)</h3>
+                            <p class="product-detail__description">
+                                白い花のモチーフのイヤリング。
+                            </p>
+                            <div class="product-detail__price">¥39,800 (税込)</div>
+                            <a href="https://fomusparure.official.ec/items/82796324" target="_blank" class="btn btn--primary btn--large">詳細を見る</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- バッジ -->
+                <h3 id="badge-section" style="font-size: 24px; margin: 60px 0 30px 0; color: #2c2c2c; font-family: 'Playfair Display', serif;">バッジ</h3>
+                <div class="product-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-bottom: 60px;">
+                    <article class="product-detail">
+                        <div class="product-detail__image">
+                            <img src="名称未設定フォルダ/IMG_4848.JPG" alt="FOMUS PARURE BADGE" style="width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center; border-radius: 8px;">
+                        </div>
+                        <div class="product-detail__info">
+                            <h3 class="product-detail__name">FOMUS PARURE BADGE</h3>
+                            <p class="product-detail__description">
+                                FOMUSロゴを施したオリジナルバッジ。
+                            </p>
+                            <div class="product-detail__price">¥10,000 (税込)</div>
+                            <a href="https://fomusparure.official.ec/items/all" target="_blank" class="btn btn--primary btn--large">詳細を見る</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- かんざし -->
+                <h3 id="kanzashi-section" style="font-size: 24px; margin: 60px 0 30px 0; color: #2c2c2c; font-family: 'Playfair Display', serif;">かんざし</h3>
+                <div class="product-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px;">
+                    <article class="product-detail">
+                        <div class="product-detail__image">
+                            <img src="名称未設定フォルダ/FOMUS Parure KANZASHI.jpg" alt="FOMUS Parure KANZASHI" style="width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center; border-radius: 8px;">
+                        </div>
+                        <div class="product-detail__info">
+                            <h3 class="product-detail__name">FOMUS Parure KANZASHI</h3>
+                            <p class="product-detail__description">
+                                伝統的なかんざしの美しさを現代に蘇らせた逸品。
+                            </p>
+                            <div class="product-detail__price">¥45,000 (税込)</div>
+                            <a href="https://fomusparure.official.ec/items/78681527" target="_blank" class="btn btn--primary btn--large">詳細を見る</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 森の魅力 -->
+        <section class="collection-story">
+            <div class="container">
+                <div class="collection-story__content">
+                    <div class="collection-story__text">
+                        <h2 class="collection-story__title">木が持つ、癒しの力</h2>
+                        <p class="collection-story__description">
+                            森コレクションは、日本の豊かな森林からインスピレーションを得て生まれました。ひのき材が持つ自然の温もりと、その美しい木目が織りなす表情は、身に着ける人に静寂と安らぎをもたらします。
+                        </p>
+                        <p class="collection-story__description">
+                            日常の中で自然とのつながりを感じられるよう、シンプルでありながらも洗練されたデザインに仕上げました。毎日身に着けることで、忙しい現代生活に木の安らぎを取り入れることができます。
+                        </p>
+                    </div>
+                    <div class="collection-story__image">
+                        <img src="名称未設定フォルダ/Collectionstoryimage.JPG" alt="森が持つ、癒しの力" style="width: 100%; height: 400px; object-fit: cover; object-position: center; border-radius: 12px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 他のコレクション -->
+        <section class="other-collections">
+            <div class="container">
+                <h2 class="section-title">Other Collections</h2>
+                <p class="section-subtitle">その他のコレクション</p>
+                
+                <div class="collection-nav">
+                    <a href="ten.html" class="collection-nav__item">
+                        <div class="collection-nav__image" style="background-image: url('名称未設定フォルダ/天コレクション.JPG'); background-size: cover; background-position: center; height: 200px; border-radius: 8px;"></div>
+                        <h3 class="collection-nav__title">天 (Ten)</h3>
+                        <p class="collection-nav__description">完全オーダーメイドのオートジュエリー</p>
+                    </a>
+                    <a href="kiwami.html" class="collection-nav__item">
+                        <div class="collection-nav__image" style="background-image: url('名称未設定フォルダ/極コレクション.JPG'); background-size: cover; background-position: center; height: 200px; border-radius: 8px;"></div>
+                        <h3 class="collection-nav__title">極 (Kiwami)</h3>
+                        <p class="collection-nav__description">年間10セット限定の最高峰</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section footer__section--brand">
+                    <h3 class="footer__title">FOMUS PARURE</h3>
+                    <p class="footer__description">
+                        1300年の伝統技法と現代デザインが融合した、<br>
+                        唯一無二の枡アクセサリーブランド。
+                    </p>
+                    <div class="footer__contact">
+                        <p>📧 info@fomus-parure.com</p>
+                        <p>📞 03-1234-5678</p>
+                    </div>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">コレクション</h4>
+                    <ul class="footer__list">
+                        <li><a href="mori.html">森 (Mori)</a></li>
+                        <li><a href="ten.html">天 (Ten)</a></li>
+                        <li><a href="kiwami.html">極 (Kiwami)</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">サービス</h4>
+                    <ul class="footer__list">
+                        <li><a href="index.html#story">ブランドストーリー</a></li>
+                        <li><a href="index.html#about">職人の技</a></li>
+                        <li><a href="index.html#guarantee">品質保証</a></li>
+                        <li><a href="index.html#contact">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">企業情報</h4>
+                    <ul class="footer__list">
+                        <li><a href="index.html#about">会社概要</a></li>
+                        <li><a href="index.html#story">プライバシーポリシー</a></li>
+                        <li><a href="index.html#story">利用規約</a></li>
+                        <li><a href="index.html#story">特定商取引法</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 FOMUS PARURE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/pricing.js"></script>
+</body>
+</html>

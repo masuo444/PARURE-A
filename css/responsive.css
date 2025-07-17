@@ -1,0 +1,676 @@
+/* FOMUS PARURE - Responsive Styles */
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 16px;
+    }
+    
+    .nav {
+        padding: 16px 20px;
+    }
+    
+    .hero__title-main {
+        font-size: 36px;
+    }
+    
+    .hero__title-secondary {
+        font-size: 32px;
+    }
+    
+    .hero__title-concept {
+        font-size: 28px;
+    }
+    
+    .hero__title-brand {
+        font-size: 18px;
+        padding: 14px 28px;
+    }
+    
+    .section-title {
+        font-size: 32px;
+    }
+    
+    .brand-story__content {
+        gap: 60px;
+    }
+    
+    .features__grid {
+        gap: 40px;
+    }
+    
+    .collection__content {
+        gap: 60px;
+    }
+    
+    .collection-gallery {
+        gap: 30px;
+        padding: 0 20px;
+    }
+    
+    .collection-gallery__item,
+    .collection-gallery__item--main {
+        height: 500px;
+    }
+    
+    /* タブレスポンシブ */
+    .experience-links__nav {
+        gap: 30px;
+    }
+    
+    .experience-links__btn {
+        padding: 30px 20px;
+        gap: 20px;
+    }
+    
+    .tabs__icon-wrapper {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .tabs__icon {
+        font-size: 20px;
+    }
+    
+    .tabs__title {
+        font-size: 18px;
+    }
+    
+    .craftsmanship__item,
+    .lifestyle__item {
+        grid-template-columns: 150px 1fr;
+        gap: 40px;
+    }
+    
+    .craftsmanship__item--reverse,
+    .lifestyle__item--reverse {
+        grid-template-columns: 1fr 150px;
+    }
+    
+    .craftsmanship__icon,
+    .lifestyle__icon {
+        font-size: 60px;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    /* Navigation */
+    .nav__menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(37, 37, 37, 0.1);
+        padding: 20px;
+    }
+    
+    .nav__menu.active {
+        display: block;
+    }
+    
+    .nav__list {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .nav__mobile {
+        display: block;
+    }
+    
+    .nav__toggle {
+        display: flex;
+    }
+    
+    .nav__region {
+        order: -1;
+    }
+    
+    /* Hero Section */
+    .hero {
+        margin-top: 60px;
+    }
+    
+    .hero__container {
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 40px;
+    }
+    
+    .hero__image-wrapper {
+        flex: none;
+        width: 100%;
+        max-width: 500px;
+    }
+    
+    .hero__content {
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .hero__logo {
+        margin: 0 auto 30px;
+    }
+    
+    .hero__title-main {
+        font-size: 36px;
+    }
+    
+    
+    /* Philosophy Section */
+    .philosophy {
+        padding: 80px 0;
+    }
+    
+    .philosophy__title {
+        font-size: 32px;
+    }
+    
+    .philosophy__tagline p {
+        font-size: 24px;
+    }
+    
+    .philosophy__content {
+        padding: 0 20px;
+    }
+    
+    /* Brand Story */
+    .brand-story__content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .brand-story__stats {
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .stat__number {
+        font-size: 36px;
+    }
+    
+    /* Features */
+    .features__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .feature {
+        padding: 30px 20px;
+    }
+    
+    /* Products */
+    .collection-gallery {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 20px;
+    }
+    
+    .collection-gallery__item,
+    .collection-gallery__item--main {
+        height: 400px;
+    }
+    
+    /* モバイルタブ */
+    .experience-links__nav {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .experience-links__btn {
+        padding: 25px 20px;
+        gap: 16px;
+    }
+    
+    .tabs__icon-wrapper {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .tabs__icon {
+        font-size: 18px;
+    }
+    
+    .tabs__title {
+        font-size: 16px;
+    }
+    
+    .tabs__subtitle {
+        font-size: 12px;
+    }
+    
+    .craftsmanship__item,
+    .lifestyle__item {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .craftsmanship__item--reverse,
+    .lifestyle__item--reverse {
+        grid-template-columns: 1fr;
+    }
+    
+    .craftsmanship__item--reverse .craftsmanship__content,
+    .lifestyle__item--reverse .lifestyle__content {
+        order: initial;
+        text-align: center;
+    }
+    
+    .craftsmanship__grid,
+    .lifestyle__grid {
+        gap: 50px;
+    }
+    
+    .products__grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .product-card__content {
+        padding: 24px;
+    }
+    
+    .product-card__actions {
+        flex-direction: column;
+    }
+    
+    /* Testimonials */
+    .testimonials__grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .testimonial {
+        padding: 30px 24px;
+    }
+    
+    /* Guarantee */
+    .guarantee__grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+    }
+    
+    .guarantee__item {
+        padding: 30px 24px;
+    }
+    
+    /* Pricing Info */
+    .pricing-info__grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .pricing-info__item {
+        padding: 30px 24px;
+    }
+    
+    /* Collection */
+    .collection__content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .collection__title {
+        font-size: 32px;
+    }
+    
+    .collection__actions {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Footer */
+    .footer__content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .footer__section--brand {
+        max-width: 100%;
+    }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 12px;
+    }
+    
+    .nav {
+        padding: 12px 16px;
+    }
+    
+    .nav__logo {
+        font-size: 22px;
+    }
+    
+    /* Hero */
+    .hero__title-main {
+        font-size: 28px;
+    }
+    
+    .hero__subtitle-text {
+        font-size: 16px;
+    }
+    
+    .hero__cta {
+        padding: 14px 32px;
+        font-size: 14px;
+    }
+    
+    /* Philosophy */
+    .philosophy {
+        padding: 60px 0;
+    }
+    
+    .philosophy__title {
+        font-size: 28px;
+    }
+    
+    .philosophy__tagline p {
+        font-size: 20px;
+    }
+    
+    .philosophy__main-text p,
+    .philosophy__values p,
+    .philosophy__closing p,
+    .philosophy__list li {
+        font-size: 14px;
+    }
+    
+    .hero__subtitle {
+        font-size: 16px;
+    }
+    
+    .hero__actions {
+        width: 100%;
+    }
+    
+    
+    /* Buttons */
+    .btn {
+        width: 100%;
+        max-width: 280px;
+        font-size: 12px;
+        padding: 14px 20px;
+    }
+    
+    .btn--large {
+        padding: 16px 24px;
+        font-size: 13px;
+    }
+    
+    /* Sections */
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .section-subtitle {
+        font-size: 14px;
+    }
+    
+    /* Brand Story */
+    .brand-story {
+        padding: 60px 0;
+    }
+    
+    .brand-story__title {
+        font-size: 28px;
+    }
+    
+    .brand-story__stats {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    
+    .stat__number {
+        font-size: 32px;
+    }
+    
+    .stat__label {
+        font-size: 13px;
+    }
+    
+    /* Features */
+    .features {
+        padding: 60px 0;
+    }
+    
+    .feature__icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .feature__title {
+        font-size: 20px;
+    }
+    
+    .feature__description {
+        font-size: 14px;
+    }
+    
+    /* Products */
+    .products {
+        padding: 60px 0;
+    }
+    
+    .collection-gallery {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+    }
+    
+    .collection-gallery__item,
+    .collection-gallery__item--main {
+        height: 300px;
+    }
+    
+    .products__grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .product-card__content {
+        padding: 20px;
+    }
+    
+    .product-card__title {
+        font-size: 18px;
+    }
+    
+    .product-card__description {
+        font-size: 13px;
+    }
+    
+    .product-card__price {
+        font-size: 16px;
+    }
+    
+    /* Testimonials */
+    .testimonials {
+        padding: 60px 0;
+    }
+    
+    .testimonial {
+        padding: 24px 20px;
+    }
+    
+    .testimonial__text {
+        font-size: 14px;
+    }
+    
+    /* Guarantee */
+    .guarantee {
+        padding: 60px 0;
+    }
+    
+    .guarantee__title {
+        font-size: 28px;
+    }
+    
+    .guarantee__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .guarantee__item {
+        padding: 24px 20px;
+    }
+    
+    .guarantee__icon {
+        font-size: 36px;
+    }
+    
+    .guarantee__item-title {
+        font-size: 18px;
+    }
+    
+    .guarantee__item-description {
+        font-size: 13px;
+    }
+    
+    /* Pricing Info */
+    .pricing-info {
+        padding: 60px 0;
+    }
+    
+    .pricing-info__title {
+        font-size: 28px;
+    }
+    
+    .pricing-info__item {
+        padding: 24px 20px;
+    }
+    
+    .pricing-info__icon {
+        font-size: 36px;
+    }
+    
+    .pricing-info__item-title {
+        font-size: 18px;
+    }
+    
+    .pricing-info__item-description {
+        font-size: 13px;
+    }
+    
+    .pricing-info__note {
+        padding: 24px 20px;
+    }
+    
+    .pricing-info__note p {
+        font-size: 13px;
+    }
+    
+    /* Collection */
+    .collection {
+        padding: 60px 0;
+    }
+    
+    .collection__title {
+        font-size: 28px;
+    }
+    
+    .collection__description {
+        font-size: 14px;
+    }
+    
+    .collection__offer {
+        padding: 16px;
+    }
+    
+    .collection__offer-text {
+        font-size: 13px;
+    }
+    
+    .collection__offer-code {
+        font-size: 14px;
+    }
+    
+    
+    /* Footer */
+    .footer {
+        padding: 40px 0 16px;
+    }
+    
+    .footer__title {
+        font-size: 20px;
+    }
+    
+    .footer__description {
+        font-size: 13px;
+    }
+    
+    .footer__contact p {
+        font-size: 13px;
+    }
+    
+    .footer__subtitle {
+        font-size: 14px;
+    }
+    
+    .footer__list a {
+        font-size: 13px;
+    }
+    
+    .footer__bottom p {
+        font-size: 13px;
+    }
+}
+
+/* Very Small Mobile */
+@media (max-width: 320px) {
+    .hero__title-main {
+        font-size: 20px;
+    }
+    
+    .hero__title-secondary {
+        font-size: 18px;
+    }
+    
+    .hero__title-concept {
+        font-size: 16px;
+    }
+    
+    .hero__title-brand {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+    
+    .section-title {
+        font-size: 24px;
+    }
+    
+    .brand-story__title {
+        font-size: 24px;
+    }
+    
+    .collection__title {
+        font-size: 24px;
+    }
+    
+    .guarantee__title {
+        font-size: 24px;
+    }
+    
+    .pricing-info__title {
+        font-size: 24px;
+    }
+    
+    .btn {
+        max-width: 100%;
+        font-size: 11px;
+    }
+    
+    .btn--large {
+        font-size: 12px;
+    }
+}

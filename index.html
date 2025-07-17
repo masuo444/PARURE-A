@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOMUS PARURE - 1300年の伝統が生み出した枡アクセサリー</title>
+    <meta name="description" content="1300年の伝統技法と現代デザインが融合した唯一無二の枡アクセサリーブランド。森・月・天・極の4つのコレクションで、あなただけの特別なジュエリーを。">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__logo">
+                <a href="index.html">
+                    <span class="nav__logo-text">FOMUS PARURE</span>
+                </a>
+            </div>
+            
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#story" class="nav__link">ブランド</a></li>
+                    <li class="nav__item"><a href="#products" class="nav__link">コレクション</a></li>
+                    <li class="nav__item"><a href="#story" class="nav__link">ストーリー</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">お問い合わせ</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav__region">
+                <div class="region-selector">
+                    <select id="region-select" class="region-selector__select">
+                        <option value="jp">日本 (¥)</option>
+                        <option value="us">海外 ($)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="nav__mobile">
+                <button class="nav__toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ヒーローセクション -->
+        <section class="hero">
+            <div class="hero__container">
+                <div class="hero__image-wrapper">
+                    <img src="ヒーローイメージ.JPG" alt="FOMUS PARURE ジュエリーコレクション" class="hero__img">
+                </div>
+                <div class="hero__content">
+                    <div class="hero__brand-mark">FOMUS PARURE</div>
+                    <h1 class="hero__title">
+                        <span class="hero__title-main">千三百年の宝物を現代に</span>
+                    </h1>
+                    <div class="hero__subtitle">
+                        <p class="hero__subtitle-text">神聖なる枡の文化を纏い、</p>
+                        <p class="hero__subtitle-text">あなただけの物語を紡ぐ特別な体験</p>
+                    </div>
+                    <a href="#products" class="hero__cta">コレクションを見る</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 哲学セクション -->
+        <section class="philosophy">
+            <div class="container">
+                <h2 class="philosophy__title">FOMUS PARUREの哲学</h2>
+                <div class="philosophy__tagline">
+                    <p>"時間を纏う。文化をまとう。"</p>
+                </div>
+                <div class="philosophy__content">
+                    <p class="philosophy__description">
+                        FOMUS PARUREは、1300年の歴史が息づく"枡"を、神社仏閣にも使用される国産ヒノキという最高級素材を組み合わせた、唯一無二のラグジュアリーアートジュエリーです。
+                    </p>
+                    
+                    <div class="philosophy__values">
+                        <p>私たちは、枡のシンプルながらも奥深い造形美に、芸術性と職人技を注ぎ込み、空間を彩るアートピースとしての側面と、身につけることで感じる洗練の美を両立させました。</p>
+                    </div>
+                    
+                    <p class="philosophy__closing">
+                        FOMUS PARUREの作品は、装飾品であると同時に、<br>
+                        空間を彩るオブジェとしても存在感を放ちます。<br>
+                        身につけても、飾っても美しい——<br>
+                        それは、用の美を超えた、<strong>新たな"文化のかたち"</strong>です。
+                    </p>
+                    
+                    <!-- クラフト画像スライドショー -->
+                    <div class="craft-slideshow" style="margin-top: 60px; text-align: center;">
+                        <div class="slideshow-container" style="position: relative; max-width: 800px; margin: 0 auto; background: #f8f9fa; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                            <div class="slide active" style="display: block; position: relative;">
+                                <img src="クラフト１.JPG" alt="職人の技術 1" style="width: 100%; height: 500px; object-fit: cover; object-position: center;">
+                            </div>
+                            <div class="slide" style="display: none; position: relative;">
+                                <img src="クラフト２.JPG" alt="職人の技術 2" style="width: 100%; height: 500px; object-fit: cover; object-position: center;">
+                            </div>
+                            <div class="slide" style="display: none; position: relative;">
+                                <img src="クラフト３.JPG" alt="職人の技術 3" style="width: 100%; height: 500px; object-fit: cover; object-position: center;">
+                            </div>
+                            <div class="slide" style="display: none; position: relative;">
+                                <img src="クラフト４.JPG" alt="職人の技術 4" style="width: 100%; height: 500px; object-fit: cover; object-position: center;">
+                            </div>
+                            
+                            <!-- 前後ボタン -->
+                            <button class="prev" onclick="changeSlide(-1)" style="position: absolute; top: 50%; left: 20px; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; font-size: 24px; padding: 10px 15px; cursor: pointer; border-radius: 50%; transition: background 0.3s ease;">&#10094;</button>
+                            <button class="next" onclick="changeSlide(1)" style="position: absolute; top: 50%; right: 20px; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; font-size: 24px; padding: 10px 15px; cursor: pointer; border-radius: 50%; transition: background 0.3s ease;">&#10095;</button>
+                            
+                            <!-- ドットインジケーター -->
+                            <div class="dots-container" style="text-align: center; padding: 20px; background: rgba(255,255,255,0.9);">
+                                <span class="dot active" onclick="currentSlide(1)" style="height: 15px; width: 15px; margin: 0 5px; background-color: #333; border-radius: 50%; display: inline-block; cursor: pointer; transition: background-color 0.3s ease;"></span>
+                                <span class="dot" onclick="currentSlide(2)" style="height: 15px; width: 15px; margin: 0 5px; background-color: #bbb; border-radius: 50%; display: inline-block; cursor: pointer; transition: background-color 0.3s ease;"></span>
+                                <span class="dot" onclick="currentSlide(3)" style="height: 15px; width: 15px; margin: 0 5px; background-color: #bbb; border-radius: 50%; display: inline-block; cursor: pointer; transition: background-color 0.3s ease;"></span>
+                                <span class="dot" onclick="currentSlide(4)" style="height: 15px; width: 15px; margin: 0 5px; background-color: #bbb; border-radius: 50%; display: inline-block; cursor: pointer; transition: background-color 0.3s ease;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <!-- プロダクトセクション -->
+        <section class="products" id="products" style="padding: 40px 0; margin: 0;">
+            <!-- コレクションギャラリー -->
+            <div class="collection-gallery" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; width: 100vw; height: 60vh; margin: 0; padding: 0; position: relative; left: 50%; transform: translateX(-50%);">
+                <div class="collection-gallery__item" style="position: relative; overflow: hidden;">
+                    <img src="モデル１.JPG" alt="FOMUS PARURE モデル着用イメージ" class="collection-gallery__img" style="width: 100%; height: 100%; object-fit: cover; object-position: center top;">
+                    <div class="collection-gallery__overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;">
+                        <a href="mori.html#accessories" class="collection-gallery__link" style="color: white; text-decoration: none; font-weight: 600; font-size: 18px;">着用アクセサリーを見る</a>
+                    </div>
+                </div>
+                <div class="collection-gallery__item" style="position: relative; overflow: hidden;">
+                    <img src="モデル２.JPG" alt="FOMUS PARURE モデル着用イメージ２" class="collection-gallery__img" style="width: 100%; height: 100%; object-fit: cover; object-position: center top;">
+                    <div class="collection-gallery__overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;">
+                        <a href="mori.html#accessories" class="collection-gallery__link" style="color: white; text-decoration: none; font-weight: 600; font-size: 18px;">着用アクセサリーを見る</a>
+                    </div>
+                </div>
+            </div>
+            
+            <style>
+            .collection-gallery__item:hover .collection-gallery__overlay {
+                opacity: 1;
+            }
+            </style>
+            
+            <div class="container" style="margin-top: 240px;">
+                
+                <div class="section-header">
+                    <h2 class="section-title">Collections</h2>
+                    <p class="section-subtitle">森・天・極 - 伝統を纏う匠のラインナップ</p>
+                </div>
+                
+                <div class="products__grid" style="display: flex; flex-direction: column; gap: 80px; margin-top: 60px;">
+                    
+                    <!-- 森コレクション -->
+                    <article class="product-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+                        <div class="product-content">
+                            <h3 style="font-size: 32px; margin-bottom: 20px; color: #2c2c2c; font-family: 'Playfair Display', serif;">森 (Mori) - Brand Original</h3>
+                            <p style="color: #666; line-height: 1.8; margin-bottom: 30px; font-size: 16px;">自然の恵みとヒノキの温もりが感じられる、<br>日常に溶け込むシンプルなデザイン。<br>ブランドオリジナルの多彩なライン。</p>
+                            <div>
+                                <a href="mori.html" class="btn btn--primary" style="display: inline-block;">詳細を見る</a>
+                            </div>
+                        </div>
+                        <div class="product-image" style="height: 400px; border-radius: 12px; position: relative; overflow: hidden;">
+                            <img src="名称未設定フォルダ/森コレクション.JPG" alt="森コレクション" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                        </div>
+                    </article>
+                    
+                    <!-- 天コレクション -->
+                    <article class="product-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+                        <div class="product-content">
+                            <h3 style="font-size: 32px; margin-bottom: 20px; color: #2c2c2c; font-family: 'Playfair Display', serif;">天 (Ten) - Full Custom</h3>
+                            <p style="color: #666; line-height: 1.8; margin-bottom: 30px; font-size: 16px;">完全オーダーメイドのオートジュエリー。<br>お客様とデザイナー、職人が協働して<br>創り上げる世界に一つの作品。</p>
+                            <div>
+                                <a href="ten.html" class="btn btn--primary" style="display: inline-block;">詳細を見る</a>
+                            </div>
+                        </div>
+                        <div class="product-image" style="height: 400px; border-radius: 12px; position: relative; overflow: hidden;">
+                            <img src="名称未設定フォルダ/天コレクション.JPG" alt="天コレクション" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                        </div>
+                    </article>
+                    
+                    <!-- 極コレクション -->
+                    <article class="product-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+                        <div class="product-content">
+                            <h3 style="font-size: 32px; margin-bottom: 20px; color: #2c2c2c; font-family: 'Playfair Display', serif;">極 (Kiwami) - Ultimate Set</h3>
+                            <p style="color: #666; line-height: 1.8; margin-bottom: 30px; font-size: 16px;">年間10セット限定の最高峰マスターピース。<br>究極の4点セットで、比類なき威光を纏う<br>FOMUS PARUREの技術と美意識の集大成。</p>
+                            <div>
+                                <a href="kiwami.html" class="btn btn--primary" style="display: inline-block;">詳細を見る</a>
+                            </div>
+                        </div>
+                        <div class="product-image" style="height: 400px; border-radius: 12px; position: relative; overflow: hidden;">
+                            <img src="名称未設定フォルダ/極コレクション.JPG" alt="極コレクション" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                        </div>
+                    </article>
+                    
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+        <!-- ギフト購入導線セクション -->
+        <section class="luxury-gift" style="background: #f8f9fa; color: #1a1a1a; padding: 120px 0; position: relative; overflow: hidden;">
+            <div class="container" style="position: relative; z-index: 2;">
+                <div class="luxury-gift__content" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                    <div class="luxury-gift__badge" style="display: inline-block; background: rgba(51, 51, 51, 0.1); border: 1px solid rgba(51, 51, 51, 0.2); padding: 8px 24px; border-radius: 50px; margin-bottom: 30px; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #333333;">
+                        <span style="margin-right: 8px;">✨</span>特別な贈り物
+                    </div>
+                    
+                    <h2 style="font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 400; margin-bottom: 24px; color: #1a1a1a; line-height: 1.2;">
+                        大切な人への<br>
+                        <span style="color: #333333; font-weight: 600;">極上の贈り物</span>
+                    </h2>
+                    
+                    <p style="font-size: 18px; line-height: 1.8; color: #666666; margin-bottom: 50px;">
+                        1300年の歴史と職人の技が宿る、FOMUS PARUREのジュエリー。<br>
+                        人生の特別な瞬間を彩る、忘れられない贈り物をお届けします。
+                    </p>
+                    
+                    <div class="luxury-gift__features" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 60px; margin-bottom: 80px;">
+                        <div class="feature-item" style="text-align: center;">
+                            <div style="width: 220px; height: 220px; background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 0 0 1px rgba(255,255,255,0.8); overflow: hidden; position: relative; transition: transform 0.3s ease;">
+                                <img src="名称未設定フォルダ/専用ギフトボックス.JPG" alt="専用ギフトボックス" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+                                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.1) 100%); pointer-events: none;"></div>
+                            </div>
+                            <h3 style="font-size: 20px; margin-bottom: 16px; color: #333333; font-weight: 600;">専用ギフトボックス</h3>
+                            <p style="font-size: 15px; color: #666666; line-height: 1.7; max-width: 280px; margin: 0 auto;">高級感溢れる特製ボックスで、開封の瞬間から感動を演出</p>
+                        </div>
+                        <div class="feature-item" style="text-align: center;">
+                            <div style="width: 220px; height: 220px; background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 0 0 1px rgba(255,255,255,0.8); overflow: hidden; position: relative; transition: transform 0.3s ease;">
+                                <img src="名称未設定フォルダ/デジタル証明証.jpg" alt="デジタル証明証" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+                                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.1) 100%); pointer-events: none;"></div>
+                            </div>
+                            <h3 style="font-size: 20px; margin-bottom: 16px; color: #333333; font-weight: 600;">最先端テクノロジーを活用したデジタル証明証</h3>
+                            <p style="font-size: 15px; color: #666666; line-height: 1.7; max-width: 280px; margin: 0 auto;">ブロックチェーン技術による真正性保証で、永続的な価値を証明</p>
+                        </div>
+                    </div>
+                    
+                    <div class="luxury-gift__cta" style="display: flex; justify-content: center;">
+                        <a href="#products" class="btn btn--primary" style="background-color: #333333; color: #ffffff; padding: 18px 36px; font-size: 16px; font-weight: 600; border: none; border-radius: 0; text-decoration: none; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.05em;">
+                            <span style="margin-right: 8px;">💎</span>今すぐ選ぶ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- コレクションセクション -->
+        <section class="collection" id="collection">
+            <div class="collection__content">
+                <div class="collection__text">
+                    <h2 class="collection__title">今すぐ始める、特別な体験</h2>
+                    <p class="collection__description">
+                        1300年の伝統と現代の美が出会う、FOMUS PARUREの世界へ。<br>
+                        あなただけの特別なアクセサリーで、日常を格上げしませんか？
+                    </p>
+                    <div class="collection__actions">
+                        <a href="#products" class="btn btn--primary btn--large">今すぐコレクションを見る</a>
+                    </div>
+                </div>
+                <div class="collection__visual">
+                    <div class="collection__image"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section footer__section--brand">
+                    <h3 class="footer__title">FOMUS PARURE</h3>
+                    <p class="footer__description">
+                        1300年の伝統技法と現代デザインが融合した、<br>
+                        唯一無二の枡アクセサリーブランド。
+                    </p>
+                    <div class="footer__contact">
+                        <p>📧 info@fomus-parure.com</p>
+                        <p>📞 03-1234-5678</p>
+                    </div>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">コレクション</h4>
+                    <ul class="footer__list">
+                        <li><a href="mori.html">森 (Mori)</a></li>
+                        <li><a href="ten.html">天 (Ten)</a></li>
+                        <li><a href="kiwami.html">極 (Kiwami)</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">サービス</h4>
+                    <ul class="footer__list">
+                        <li><a href="#story">ブランドストーリー</a></li>
+                        <li><a href="#about">職人の技</a></li>
+                        <li><a href="#guarantee">品質保証</a></li>
+                        <li><a href="#contact">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">企業情報</h4>
+                    <ul class="footer__list">
+                        <li><a href="#about">会社概要</a></li>
+                        <li><a href="#story">プライバシーポリシー</a></li>
+                        <li><a href="#story">利用規約</a></li>
+                        <li><a href="#story">特定商取引法</a></li>
+                        <li><a href="https://github.com/masuo444/fomusparure-japan" target="_blank">🔗 GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 FOMUS PARURE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/pricing.js"></script>
+</body>
+</html>

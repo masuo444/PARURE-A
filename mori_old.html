@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>森コレクション - FOMUS PARURE</title>
+    <meta name="description" content="日常に溶け込むシンプルで美しいひのき材アクセサリー。森コレクションは FOMUS PARURE の原点となるエントリーライン。">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/collection.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__logo">
+                <a href="index.html">
+                    <span class="nav__logo-text">FOMUS PARURE</span>
+                </a>
+            </div>
+            
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html#story" class="nav__link">ブランド</a></li>
+                    <li class="nav__item"><a href="index.html#products" class="nav__link">コレクション</a></li>
+                    <li class="nav__item"><a href="index.html#story" class="nav__link">ストーリー</a></li>
+                    <li class="nav__item"><a href="index.html#contact" class="nav__link">お問い合わせ</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav__region">
+                <div class="region-selector">
+                    <select id="region-select" class="region-selector__select">
+                        <option value="jp">日本 (¥)</option>
+                        <option value="us">海外 ($)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="nav__mobile">
+                <button class="nav__toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- コレクションヒーロー -->
+        <section class="collection-hero" style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%); color: white;">
+            <div class="container">
+                <div class="collection-hero__content">
+                    <div class="collection-hero__text">
+                        <div class="collection-hero__breadcrumb">
+                            <a href="index.html" style="color: rgba(255,255,255,0.7);">ホーム</a> / <a href="index.html#products" style="color: rgba(255,255,255,0.7);">コレクション</a> / 森
+                        </div>
+                        <h1 class="collection-hero__title">
+                            <span class="collection-hero__title-ja" style="color: #ffffff;">森</span>
+                            <span class="collection-hero__title-en" style="color: rgba(255,255,255,0.8);">Mori - Brand Original</span>
+                        </h1>
+                        <p class="collection-hero__description" style="color: rgba(255,255,255,0.9);">
+                            自然の恵みとヒノキの温もりが感じられる、<br>
+                            日常に溶け込むシンプルなデザイン。<br>
+                            ブランドオリジナルの多彩なライン。
+                        </p>
+                        <div class="collection-hero__features">
+                            <div class="feature-badge" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); color: white;">
+                                <span class="feature-badge__icon">🌿</span>
+                                <span class="feature-badge__text">自然素材</span>
+                            </div>
+                            <div class="feature-badge" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); color: white;">
+                                <span class="feature-badge__icon">✨</span>
+                                <span class="feature-badge__text">シンプルデザイン</span>
+                            </div>
+                            <div class="feature-badge" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); color: white;">
+                                <span class="feature-badge__icon">🌙</span>
+                                <span class="feature-badge__text">ブランドオリジナル</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collection-hero__image">
+                        <img src="名称未設定フォルダ/森コレクション.JPG" alt="森コレクション" style="width: 100%; height: 400px; object-fit: cover; object-position: center; border-radius: 12px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 商品ラインナップ -->
+        <section class="product-lineup">
+            <div class="container">
+                <h2 class="section-title">Product Lineup</h2>
+                <p class="section-subtitle">森コレクションの商品ラインナップ</p>
+                
+                <div class="product-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px;">
+                    <article class="product-detail">
+                        <div class="product-detail__image">
+                            <img src="名称未設定フォルダ/IMG_4848.JPG" alt="Essence Ring" style="width: 100%; height: 300px; object-fit: cover; object-position: center; border-radius: 8px;">
+                        </div>
+                        <div class="product-detail__info">
+                            <h3 class="product-detail__name">Essence Ring</h3>
+                            <p class="product-detail__description">
+                                職人が丁寧に削り出したひのき材のリング。シンプルながらも木目の美しさが際立つデザインです。
+                            </p>
+                            <div class="product-detail__price" data-price-key="mori:ring">¥18,000 (税込)</div>
+                            <div class="product-detail__options">
+                                <label>サイズ：</label>
+                                <select class="size-select">
+                                    <option>9号</option>
+                                    <option>11号</option>
+                                    <option>13号</option>
+                                    <option>15号</option>
+                                    <option>17号</option>
+                                </select>
+                            </div>
+                            <div class="product-detail__stock">
+                                <span style="color: #27ae60;">在庫あり</span>
+                            </div>
+                            <button class="btn btn--primary btn--large">カートに追加</button>
+                        </div>
+                    </article>
+
+                    <article class="product-detail">
+                        <div class="product-detail__image">
+                            <img src="名称未設定フォルダ/IMG_4850.JPG" alt="Harmony Earrings" style="width: 100%; height: 300px; object-fit: cover; object-position: center; border-radius: 8px;">
+                        </div>
+                        <div class="product-detail__info">
+                            <h3 class="product-detail__name">Harmony Earrings</h3>
+                            <p class="product-detail__description">
+                                軽やかで上品なひのき材のイヤリング。自然の木目が耳元で優しく揺れる繊細なデザイン。
+                            </p>
+                            <div class="product-detail__price" data-price-key="mori:earring">¥22,000 (税込)</div>
+                            <div class="product-detail__options">
+                                <label>タイプ：</label>
+                                <select class="type-select">
+                                    <option>ピアス</option>
+                                    <option>イヤリング</option>
+                                </select>
+                            </div>
+                            <div class="product-detail__stock">
+                                <span style="color: #27ae60;">在庫あり</span>
+                            </div>
+                            <button class="btn btn--primary btn--large">カートに追加</button>
+                        </div>
+                    </article>
+
+                    <article class="product-detail">
+                        <div class="product-detail__image">
+                            <img src="名称未設定フォルダ/IMG_4852.JPG" alt="Serenity Necklace" style="width: 100%; height: 300px; object-fit: cover; object-position: center; border-radius: 8px;">
+                        </div>
+                        <div class="product-detail__info">
+                            <h3 class="product-detail__name">Serenity Necklace</h3>
+                            <p class="product-detail__description">
+                                胸元を上品に彩るひのき材のペンダント。シンプルな円形デザインが洗練された印象を演出します。
+                            </p>
+                            <div class="product-detail__price" data-price-key="mori:necklace">¥28,000 (税込)</div>
+                            <div class="product-detail__options">
+                                <label>チェーン：</label>
+                                <select class="chain-select">
+                                    <option>40cm</option>
+                                    <option>45cm</option>
+                                </select>
+                            </div>
+                            <div class="product-detail__stock">
+                                <span style="color: #27ae60;">在庫あり</span>
+                            </div>
+                            <button class="btn btn--primary btn--large">カートに追加</button>
+                        </div>
+                    </article>
+
+                    <!-- 追加商品 -->
+                    <article class="product-detail">
+                        <div class="product-detail__image">
+                            <img src="名称未設定フォルダ/IMG_4854.JPG" alt="Grace Kanzashi" style="width: 100%; height: 300px; object-fit: cover; object-position: center; border-radius: 8px;">
+                        </div>
+                        <div class="product-detail__info">
+                            <h3 class="product-detail__name">Grace Kanzashi</h3>
+                            <p class="product-detail__description">
+                                伝統的なかんざしの美しさと現代的なデザインを融合。特別な日を彩る格調高い装身具。
+                            </p>
+                            <div class="product-detail__price">¥35,000 (税込)</div>
+                            <div class="product-detail__options">
+                                <label>スタイル：</label>
+                                <select class="style-select">
+                                    <option>クラシック</option>
+                                    <option>モダン</option>
+                                </select>
+                            </div>
+                            <div class="product-detail__stock">
+                                <span style="color: #27ae60;">在庫あり</span>
+                            </div>
+                            <button class="btn btn--primary btn--large">カートに追加</button>
+                        </div>
+                    </article>
+
+                    <article class="product-detail">
+                        <div class="product-detail__image">
+                            <img src="名称未設定フォルダ/IMG_4856.JPG" alt="Nature Drop Earrings" style="width: 100%; height: 300px; object-fit: cover; object-position: center; border-radius: 8px;">
+                        </div>
+                        <div class="product-detail__info">
+                            <h3 class="product-detail__name">Nature Drop Earrings</h3>
+                            <p class="product-detail__description">
+                                自然の雫をイメージしたドロップタイプのイヤリング。優雅な動きが魅力的なデザイン。
+                            </p>
+                            <div class="product-detail__price">¥26,000 (税込)</div>
+                            <div class="product-detail__options">
+                                <label>タイプ：</label>
+                                <select class="type-select">
+                                    <option>ピアス</option>
+                                    <option>イヤリング</option>
+                                </select>
+                            </div>
+                            <div class="product-detail__stock">
+                                <span style="color: #27ae60;">在庫あり</span>
+                            </div>
+                            <button class="btn btn--primary btn--large">カートに追加</button>
+                        </div>
+                    </article>
+
+                    <article class="product-detail">
+                        <div class="product-detail__image">
+                            <img src="名称未設定フォルダ/IMG_4858 3.JPG" alt="Forest Pendant Necklace" style="width: 100%; height: 300px; object-fit: cover; object-position: center; border-radius: 8px;">
+                        </div>
+                        <div class="product-detail__info">
+                            <h3 class="product-detail__name">Forest Pendant Necklace</h3>
+                            <p class="product-detail__description">
+                                森の奥深さを表現したペンダントネックレス。立体的なデザインが印象的な逸品。
+                            </p>
+                            <div class="product-detail__price">¥32,000 (税込)</div>
+                            <div class="product-detail__options">
+                                <label>チェーン：</label>
+                                <select class="chain-select">
+                                    <option>40cm</option>
+                                    <option>45cm</option>
+                                    <option>50cm</option>
+                                </select>
+                            </div>
+                            <div class="product-detail__stock">
+                                <span style="color: #27ae60;">在庫あり</span>
+                            </div>
+                            <button class="btn btn--primary btn--large">カートに追加</button>
+                        </div>
+                    </article>
+
+                    <!-- スクリーンショットから追加される商品 -->
+                    <article class="product-detail">
+                        <div class="product-detail__image">
+                            <img src="名称未設定フォルダ/IMG_4859.JPG" alt="Blossom Earrings Collection" style="width: 100%; height: 300px; object-fit: cover; object-position: center; border-radius: 8px;">
+                        </div>
+                        <div class="product-detail__info">
+                            <h3 class="product-detail__name">Blossom Earrings Collection</h3>
+                            <p class="product-detail__description">
+                                季節の花をモチーフにした華やかなイヤリング。Red blossom、White blossom、Black blossomの3色展開で、それぞれ異なる美しさを表現。
+                            </p>
+                            <div class="product-detail__price">¥24,000 (税込)</div>
+                            <div class="product-detail__options">
+                                <label>カラー：</label>
+                                <select class="color-select">
+                                    <option>Red blossom</option>
+                                    <option>White blossom</option>
+                                    <option>Black blossom</option>
+                                </select>
+                            </div>
+                            <div class="product-detail__stock">
+                                <span style="color: #27ae60;">在庫あり</span>
+                            </div>
+                            <button class="btn btn--primary btn--large">カートに追加</button>
+                        </div>
+                    </article>
+
+                    <article class="product-detail">
+                        <div class="product-detail__image">
+                            <img src="名称未設定フォルダ/IMG_4857.JPG" alt="Temari Pierce Collection" style="width: 100%; height: 300px; object-fit: cover; object-position: center; border-radius: 8px;">
+                        </div>
+                        <div class="product-detail__info">
+                            <h3 class="product-detail__name">Temari Pierce Collection</h3>
+                            <p class="product-detail__description">
+                                伝統的な手毬をモチーフにしたピアス。BlackとWhiteの2色で、モダンと伝統が融合した洗練されたデザイン。
+                            </p>
+                            <div class="product-detail__price">¥22,000 (税込)</div>
+                            <div class="product-detail__options">
+                                <label>カラー：</label>
+                                <select class="color-select">
+                                    <option>TEMARI Black</option>
+                                    <option>TEMARI White</option>
+                                </select>
+                            </div>
+                            <div class="product-detail__stock">
+                                <span style="color: #27ae60;">在庫あり</span>
+                            </div>
+                            <button class="btn btn--primary btn--large">カートに追加</button>
+                        </div>
+                    </article>
+
+                    <article class="product-detail">
+                        <div class="product-detail__image">
+                            <img src="名称未設定フォルダ/IMG_3501.JPG" alt="Tonbo-Dama Blue Earrings" style="width: 100%; height: 300px; object-fit: cover; object-position: center; border-radius: 8px;">
+                        </div>
+                        <div class="product-detail__info">
+                            <h3 class="product-detail__name">Tonbo-Dama Blue Earrings</h3>
+                            <p class="product-detail__description">
+                                トンボ玉の美しい青を表現したイヤリング。ガラス工芸の技法から着想を得た、透明感のある美しいデザイン。
+                            </p>
+                            <div class="product-detail__price">¥26,000 (税込)</div>
+                            <div class="product-detail__options">
+                                <label>タイプ：</label>
+                                <select class="type-select">
+                                    <option>ピアス</option>
+                                    <option>イヤリング</option>
+                                </select>
+                            </div>
+                            <div class="product-detail__stock">
+                                <span style="color: #27ae60;">在庫あり</span>
+                            </div>
+                            <button class="btn btn--primary btn--large">カートに追加</button>
+                        </div>
+                    </article>
+
+                    <article class="product-detail">
+                        <div class="product-detail__image">
+                            <img src="名称未設定フォルダ/IMG_4845.JPG" alt="Flower Earrings Collection" style="width: 100%; height: 300px; object-fit: cover; object-position: center; border-radius: 8px;">
+                        </div>
+                        <div class="product-detail__info">
+                            <h3 class="product-detail__name">Flower Earrings Collection</h3>
+                            <p class="product-detail__description">
+                                可憐な花をモチーフにしたイヤリング。Yellow flowerとWhite flowerの2色で、春の陽だまりのような温かみのあるデザイン。
+                            </p>
+                            <div class="product-detail__price">¥23,000 (税込)</div>
+                            <div class="product-detail__options">
+                                <label>カラー：</label>
+                                <select class="color-select">
+                                    <option>Yellow flower</option>
+                                    <option>White flower</option>
+                                </select>
+                            </div>
+                            <div class="product-detail__stock">
+                                <span style="color: #27ae60;">在庫あり</span>
+                            </div>
+                            <button class="btn btn--primary btn--large">カートに追加</button>
+                        </div>
+                    </article>
+
+                    <article class="product-detail">
+                        <div class="product-detail__image">
+                            <img src="名称未設定フォルダ/IMG_3492.JPG" alt="Minimalist Necklace Collection" style="width: 100%; height: 300px; object-fit: cover; object-position: center; border-radius: 8px;">
+                        </div>
+                        <div class="product-detail__info">
+                            <h3 class="product-detail__name">Minimalist Necklace Collection</h3>
+                            <p class="product-detail__description">
+                                シンプルで洗練されたネックレス。WhiteとYellowの2色展開で、どんなスタイルにも合わせやすいミニマルなデザイン。
+                            </p>
+                            <div class="product-detail__price">¥29,000 (税込)</div>
+                            <div class="product-detail__options">
+                                <label>カラー：</label>
+                                <select class="color-select">
+                                    <option>White</option>
+                                    <option>Yellow</option>
+                                </select>
+                            </div>
+                            <div class="product-detail__stock">
+                                <span style="color: #27ae60;">在庫あり</span>
+                            </div>
+                            <button class="btn btn--primary btn--large">カートに追加</button>
+                        </div>
+                    </article>
+
+                    <article class="product-detail">
+                        <div class="product-detail__image">
+                            <img src="名称未設定フォルダ/IMG_3524.JPG" alt="Heritage Kanzashi" style="width: 100%; height: 300px; object-fit: cover; object-position: center; border-radius: 8px;">
+                        </div>
+                        <div class="product-detail__info">
+                            <h3 class="product-detail__name">Heritage Kanzashi</h3>
+                            <p class="product-detail__description">
+                                伝統的なかんざしの美しさを現代に蘇らせた特別な作品。特別な日の装いに、格調高い美しさを添える逸品。
+                            </p>
+                            <div class="product-detail__price">¥45,000 (税込)</div>
+                            <div class="product-detail__options">
+                                <label>スタイル：</label>
+                                <select class="style-select">
+                                    <option>クラシック</option>
+                                    <option>モダン</option>
+                                </select>
+                            </div>
+                            <div class="product-detail__stock">
+                                <span style="color: #27ae60;">在庫あり</span>
+                            </div>
+                            <button class="btn btn--primary btn--large">カートに追加</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 森の魅力 -->
+        <section class="collection-story">
+            <div class="container">
+                <div class="collection-story__content">
+                    <div class="collection-story__text">
+                        <h2 class="collection-story__title">森が持つ、癒しの力</h2>
+                        <p class="collection-story__description">
+                            森コレクションは、日本の豊かな森林からインスピレーションを得て生まれました。ひのき材が持つ自然の温もりと、その美しい木目が織りなす表情は、身に着ける人に静寂と安らぎをもたらします。
+                        </p>
+                        <p class="collection-story__description">
+                            日常の中で自然とのつながりを感じられるよう、シンプルでありながらも洗練されたデザインに仕上げました。毎日身に着けることで、忙しい現代生活に森の安らぎを取り入れることができます。
+                        </p>
+                    </div>
+                    <div class="collection-story__image">
+                        <div class="collection-story__placeholder"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 他のコレクション -->
+        <section class="other-collections">
+            <div class="container">
+                <h2 class="section-title">Other Collections</h2>
+                <p class="section-subtitle">その他のコレクション</p>
+                
+                <div class="collection-nav">
+                    <a href="ten.html" class="collection-nav__item">
+                        <div class="collection-nav__image" style="background-image: url('名称未設定フォルダ/天コレクション.JPG'); background-size: cover; background-position: center; height: 200px; border-radius: 8px;"></div>
+                        <h3 class="collection-nav__title">天 (Ten)</h3>
+                        <p class="collection-nav__description">完全オーダーメイドのオートジュエリー</p>
+                    </a>
+                    <a href="kiwami.html" class="collection-nav__item">
+                        <div class="collection-nav__image" style="background-image: url('名称未設定フォルダ/極コレクション.JPG'); background-size: cover; background-position: center; height: 200px; border-radius: 8px;"></div>
+                        <h3 class="collection-nav__title">極 (Kiwami)</h3>
+                        <p class="collection-nav__description">年間10セット限定の最高峰</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section footer__section--brand">
+                    <h3 class="footer__title">FOMUS PARURE</h3>
+                    <p class="footer__description">
+                        1300年の伝統技法と現代デザインが融合した、<br>
+                        唯一無二の枡アクセサリーブランド。
+                    </p>
+                    <div class="footer__contact">
+                        <p>📧 info@fomus-parure.com</p>
+                        <p>📞 03-1234-5678</p>
+                    </div>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">コレクション</h4>
+                    <ul class="footer__list">
+                        <li><a href="mori.html">森 (Mori)</a></li>
+                        <li><a href="ten.html">天 (Ten)</a></li>
+                        <li><a href="kiwami.html">極 (Kiwami)</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">サービス</h4>
+                    <ul class="footer__list">
+                        <li><a href="index.html#story">ブランドストーリー</a></li>
+                        <li><a href="index.html#about">職人の技</a></li>
+                        <li><a href="index.html#guarantee">品質保証</a></li>
+                        <li><a href="index.html#contact">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">企業情報</h4>
+                    <ul class="footer__list">
+                        <li><a href="index.html#about">会社概要</a></li>
+                        <li><a href="index.html#story">プライバシーポリシー</a></li>
+                        <li><a href="index.html#story">利用規約</a></li>
+                        <li><a href="index.html#story">特定商取引法</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 FOMUS PARURE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/pricing.js"></script>
+</body>
+</html>

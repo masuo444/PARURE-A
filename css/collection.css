@@ -1,0 +1,552 @@
+/* FOMUS PARURE - Collection Detail Styles */
+
+/* コレクションヒーロー */
+.collection-hero {
+    padding: 120px 0 80px;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.collection-hero__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.collection-hero__breadcrumb {
+    font-size: 14px;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.collection-hero__breadcrumb a {
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.collection-hero__breadcrumb a:hover {
+    opacity: 1;
+}
+
+.collection-hero__title {
+    margin-bottom: 24px;
+}
+
+.collection-hero__title-ja {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.collection-hero__title-en {
+    display: block;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.collection-hero__description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.collection-hero__features {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.feature-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.feature-badge__icon {
+    font-size: 16px;
+}
+
+.collection-hero__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.collection-hero__placeholder {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+}
+
+.collection-hero__placeholder::before {
+    content: "Collection Hero Image";
+}
+
+/* 商品ラインナップ */
+.product-lineup {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.product-detail {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-detail:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.product-detail__image {
+    height: 250px;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-detail__placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ddd 0%, #f0f0f0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 14px;
+}
+
+.product-detail__placeholder::before {
+    content: "Product Image";
+}
+
+.product-detail__info {
+    padding: 30px;
+}
+
+.product-detail__name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    color: #2c2c2c;
+}
+
+.product-detail__description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.product-detail__price {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2c2c2c;
+    margin-bottom: 20px;
+}
+
+.product-detail__options {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.product-detail__options label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #444;
+}
+
+.product-detail__options select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background: white;
+    cursor: pointer;
+}
+
+.product-detail__options select:focus {
+    outline: none;
+    border-color: #2c2c2c;
+}
+
+.product-detail__stock {
+    margin-bottom: 24px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* コレクションストーリー */
+.collection-story {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.collection-story__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.collection-story__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 24px;
+    color: #2c2c2c;
+}
+
+.collection-story__description {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.collection-story__image {
+    display: flex;
+    justify-content: center;
+}
+
+.collection-story__placeholder {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(135deg, #ddd 0%, #f0f0f0 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 16px;
+}
+
+.collection-story__placeholder::before {
+    content: "Collection Story Image";
+}
+
+/* 価格プラン（天コレクション用） */
+.pricing {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.pricing-plan {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-plan:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.pricing-plan--featured {
+    border: 2px solid #4ecdc4;
+    position: relative;
+    transform: scale(1.05);
+}
+
+.pricing-plan__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #2c2c2c;
+}
+
+.pricing-plan__price {
+    font-size: 32px;
+    font-weight: 600;
+    color: #2c2c2c;
+    margin-bottom: 20px;
+}
+
+.pricing-plan ul {
+    list-style: none;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.pricing-plan li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+    color: #444;
+}
+
+.pricing-plan li:last-child {
+    border-bottom: none;
+}
+
+/* カスタムコンタクト */
+.custom-contact {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.custom-contact__content {
+    text-align: center;
+}
+
+.custom-contact__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 24px;
+    color: #2c2c2c;
+}
+
+.custom-contact__description {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.custom-contact__actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* 他のコレクション */
+.other-collections {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.collection-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.collection-nav__item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.collection-nav__item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    color: inherit;
+}
+
+.collection-nav__image {
+    height: 180px;
+    background: linear-gradient(135deg, #ddd 0%, #f0f0f0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 14px;
+}
+
+.collection-nav__image::before {
+    content: "Collection Image";
+}
+
+.collection-nav__item:nth-child(1) .collection-nav__image {
+    background: linear-gradient(135deg, #e8f5e8 0%, #d4edd4 100%);
+}
+
+.collection-nav__item:nth-child(2) .collection-nav__image {
+    background: linear-gradient(135deg, #e8e8f5 0%, #d4d4ed 100%);
+}
+
+.collection-nav__item:nth-child(3) .collection-nav__image {
+    background: linear-gradient(135deg, #f5e8e8 0%, #edd4d4 100%);
+}
+
+.collection-nav__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 20px 20px 8px;
+    color: #2c2c2c;
+}
+
+.collection-nav__description {
+    font-size: 14px;
+    color: #666;
+    margin: 0 20px 20px;
+    line-height: 1.5;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .collection-hero {
+        padding: 100px 0 60px;
+        min-height: 60vh;
+    }
+    
+    .collection-hero__content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .collection-hero__title-ja {
+        font-size: 36px;
+    }
+    
+    .collection-hero__title-en {
+        font-size: 16px;
+    }
+    
+    .collection-hero__description {
+        font-size: 16px;
+    }
+    
+    .collection-hero__features {
+        justify-content: center;
+    }
+    
+    .collection-hero__placeholder {
+        height: 300px;
+    }
+    
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .product-detail__info {
+        padding: 24px;
+    }
+    
+    .collection-story__content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .collection-story__title {
+        font-size: 28px;
+    }
+    
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .pricing-plan--featured {
+        transform: none;
+    }
+    
+    .custom-contact__actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .collection-nav {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .collection-hero {
+        padding: 80px 0 40px;
+    }
+    
+    .collection-hero__title-ja {
+        font-size: 28px;
+    }
+    
+    .collection-hero__title-en {
+        font-size: 14px;
+    }
+    
+    .collection-hero__description {
+        font-size: 14px;
+    }
+    
+    .feature-badge {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+    
+    .collection-hero__placeholder {
+        height: 250px;
+    }
+    
+    .product-detail__info {
+        padding: 20px;
+    }
+    
+    .product-detail__name {
+        font-size: 18px;
+    }
+    
+    .product-detail__price {
+        font-size: 18px;
+    }
+    
+    .collection-story__title {
+        font-size: 24px;
+    }
+    
+    .collection-story__description {
+        font-size: 14px;
+    }
+    
+    .collection-story__placeholder {
+        height: 250px;
+    }
+    
+    .custom-contact__title {
+        font-size: 28px;
+    }
+    
+    .custom-contact__description {
+        font-size: 16px;
+    }
+}
