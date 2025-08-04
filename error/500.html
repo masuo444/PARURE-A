@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500 - サーバーエラー | FOMUS PARURE</title>
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline';">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #ff7675 0%, #d63031 100%);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .error-container {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+        
+        .error-code {
+            font-size: 72px;
+            font-weight: 700;
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+        
+        .error-title {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .error-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .error-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: #27ae60;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #2ecc71;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: #ecf0f1;
+            color: #2c3e50;
+        }
+        
+        .btn-secondary:hover {
+            background: #d5dbdb;
+        }
+        
+        .retry-btn {
+            background: #3498db;
+            color: white;
+        }
+        
+        .retry-btn:hover {
+            background: #2980b9;
+        }
+        
+        .system-status {
+            margin-top: 40px;
+            padding: 20px;
+            background: #fff3cd;
+            border-radius: 8px;
+            border-left: 4px solid #f39c12;
+        }
+        
+        .system-status h4 {
+            color: #d68910;
+            margin-bottom: 10px;
+        }
+        
+        .system-status p {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .contact-info {
+            margin-top: 30px;
+            padding: 20px;
+            background: #e8f5e8;
+            border-radius: 8px;
+            border-left: 4px solid #27ae60;
+        }
+        
+        .contact-info h4 {
+            color: #27ae60;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info a {
+            color: #27ae60;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .error-container {
+                padding: 40px 20px;
+            }
+            
+            .error-code {
+                font-size: 48px;
+            }
+            
+            .error-title {
+                font-size: 24px;
+            }
+            
+            .error-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-code">500</div>
+        <h1 class="error-title">サーバーエラー</h1>
+        <p class="error-description">
+            申し訳ございません。サーバーで問題が発生しており、<br>
+            現在ページを表示することができません。<br>
+            しばらく時間をおいてから再度お試しください。
+        </p>
+        
+        <div class="error-actions">
+            <button onclick="location.reload()" class="btn retry-btn">ページを再読み込み</button>
+            <a href="/language-select.html" class="btn btn-primary">ホームページに戻る</a>
+            <button onclick="history.back()" class="btn btn-secondary">前のページに戻る</button>
+        </div>
+        
+        <div class="system-status">
+            <h4>⚠️ システム状況</h4>
+            <p>
+                現在システムメンテナンス中、またはアクセス集中により<br>
+                一時的にサービスが利用できない状態です。<br>
+                ご不便をおかけして申し訳ございません。
+            </p>
+        </div>
+        
+        <div class="contact-info">
+            <h4>📞 お困りの場合</h4>
+            <p>
+                問題が継続する場合は、お手数ですが下記までご連絡ください：<br>
+                <strong>Email:</strong> <a href="mailto:support@fomus-parure.com">support@fomus-parure.com</a><br>
+                <strong>Phone:</strong> <a href="tel:+81-3-1234-5678">03-1234-5678</a>
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        // Server error logging and retry mechanism
+        (function() {
+            'use strict';
+            
+            // Log server error
+            const logData = {
+                timestamp: new Date().toISOString(),
+                event: '500_error',
+                url: window.location.href,
+                referrer: document.referrer,
+                userAgent: navigator.userAgent
+            };
+            
+            console.error('Server Error:', logData);
+            
+            // Auto-retry mechanism with exponential backoff
+            let retryCount = 0;
+            const maxRetries = 3;
+            
+            function autoRetry() {
+                if (retryCount < maxRetries) {
+                    retryCount++;
+                    const delay = Math.pow(2, retryCount) * 1000; // 2s, 4s, 8s
+                    
+                    setTimeout(() => {
+                        // Try to fetch the original page
+                        fetch(window.location.href, { 
+                            method: 'HEAD',
+                            cache: 'no-cache'
+                        })
+                        .then(response => {
+                            if (response.ok) {
+                                location.reload();
+                            } else {
+                                autoRetry();
+                            }
+                        })
+                        .catch(() => {
+                            autoRetry();
+                        });
+                    }, delay);
+                    
+                    // Show retry countdown
+                    showRetryCountdown(delay);
+                }
+            }
+            
+            function showRetryCountdown(delay) {
+                const notice = document.createElement('div');
+                notice.id = 'retry-notice';
+                notice.style.cssText = `
+                    position: fixed; 
+                    bottom: 20px; 
+                    left: 50%; 
+                    transform: translateX(-50%); 
+                    background: #3498db; 
+                    color: white; 
+                    padding: 10px 20px; 
+                    border-radius: 5px; 
+                    font-size: 14px;
+                    z-index: 1000;
+                `;
+                
+                let countdown = Math.ceil(delay / 1000);
+                notice.textContent = `${countdown}秒後に自動再試行します... (${retryCount}/${maxRetries})`;
+                
+                document.body.appendChild(notice);
+                
+                const countdownInterval = setInterval(() => {
+                    countdown--;
+                    if (countdown > 0) {
+                        notice.textContent = `${countdown}秒後に自動再試行します... (${retryCount}/${maxRetries})`;
+                    } else {
+                        clearInterval(countdownInterval);
+                        notice.remove();
+                    }
+                }, 1000);
+            }
+            
+            // Start auto-retry after 5 seconds
+            setTimeout(autoRetry, 5000);
+            
+            // Service worker registration for offline support
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistration().then(registration => {
+                    if (registration) {
+                        // Check if there's an update available
+                        registration.update();
+                    }
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

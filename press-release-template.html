@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プレスリリース - FOMUS PARURE</title>
+    <meta name="description" content="FOMUS PARUREのプレスリリース・企業情報・メディア向け資料">
+    <meta name="robots" content="index, follow">
+    
+    <!-- OGP Settings -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="プレスリリース - FOMUS PARURE">
+    <meta property="og:description" content="FOMUS PARUREの最新ニュース・企業情報・メディア向け資料">
+    <meta property="og:image" content="PARURE ogp.png">
+    <meta property="og:url" content="https://fomus-parure.com/press-release-template.html">
+    <meta property="og:site_name" content="FOMUS PARURE">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fafafa;
+        }
+        
+        .press-release {
+            max-width: 800px;
+            margin: 60px auto;
+            background: white;
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+        
+        .press-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #27ae60;
+        }
+        
+        .press-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: #27ae60;
+            margin-bottom: 10px;
+        }
+        
+        .press-tagline {
+            font-size: 16px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .press-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: #333;
+            margin: 30px 0 20px 0;
+            line-height: 1.3;
+        }
+        
+        .press-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .press-date {
+            font-weight: 600;
+        }
+        
+        .press-location {
+            font-style: italic;
+        }
+        
+        .press-content {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .press-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #27ae60;
+            margin: 30px 0 15px 0;
+        }
+        
+        .press-content p {
+            margin-bottom: 20px;
+        }
+        
+        .press-quote {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 25px;
+            border-left: 4px solid #27ae60;
+            border-radius: 10px;
+            font-style: italic;
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .press-quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            font-size: 60px;
+            color: #27ae60;
+            opacity: 0.3;
+        }
+        
+        .quote-author {
+            text-align: right;
+            margin-top: 15px;
+            font-weight: 600;
+            color: #555;
+        }
+        
+        .press-facts {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .press-facts h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: #27ae60;
+            margin-bottom: 15px;
+        }
+        
+        .press-facts ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .press-facts li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .press-facts li:last-child {
+            border-bottom: none;
+        }
+        
+        .fact-label {
+            font-weight: 600;
+            color: #555;
+        }
+        
+        .fact-value {
+            color: #333;
+        }
+        
+        .press-contact {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+        
+        .press-contact h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-icon {
+            font-size: 18px;
+        }
+        
+        .press-assets {
+            margin-top: 40px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+        
+        .press-assets h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: #27ae60;
+            margin-bottom: 20px;
+        }
+        
+        .asset-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .asset-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .asset-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .asset-icon {
+            font-size: 32px;
+            color: #27ae60;
+            margin-bottom: 10px;
+        }
+        
+        .asset-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .asset-desc {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .download-btn {
+            background: #27ae60;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            margin-top: 10px;
+            transition: background 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            background: #2ecc71;
+        }
+        
+        @media (max-width: 768px) {
+            .press-release {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+            
+            .press-title {
+                font-size: 24px;
+            }
+            
+            .press-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .asset-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="press-release">
+        <div class="press-header">
+            <div class="press-logo">FOMUS PARURE</div>
+            <div class="press-tagline">1300年の宝を現代に</div>
+        </div>
+        
+        <h1 class="press-title">
+            [リリースタイトル] 
+            FOMUS PARURE、伝統工芸と現代デザインを融合した新コレクション「森」を発表
+        </h1>
+        
+        <div class="press-meta">
+            <div class="press-date">発表日: 2024年[月][日]</div>
+            <div class="press-location">東京、日本</div>
+        </div>
+        
+        <div class="press-content">
+            <p><strong>リード文:</strong> 1300年の歴史を持つ枡と最高級の日本産檜を組み合わせた唯一無二のラグジュアリーアートジュエリーブランド「FOMUS PARURE」は、本日、新コレクション「森」の販売開始を発表いたします。</p>
+            
+            <h2>背景・課題</h2>
+            <p>現代のジュエリー市場において、真の個性と伝統的価値を兼ね備えたアクセサリーの需要が高まっています。FOMUS PARUREは、日本古来の枡作りの技術と現代的なデザインセンスを融合させることで、この市場ニーズに応えます。</p>
+            
+            <div class="press-quote">
+                「私たちは単なるジュエリーブランドではありません。1300年の歴史と技術を現代に蘇らせ、身に着ける人に特別な体験を提供する文化的ブリッジなのです。」
+                <div class="quote-author">- FOMUS PARURE 代表</div>
+            </div>
+            
+            <h2>製品・サービスの特徴</h2>
+            <p>「森」コレクションは、以下の特徴を持ちます：</p>
+            <ul style="margin: 20px 0; padding-left: 30px;">
+                <li>最高級日本産檜を使用した手作りアクセサリー</li>
+                <li>1300年の伝統技術による精密な木工加工</li>
+                <li>現代的デザインと伝統工芸の完璧な融合</li>
+                <li>完全受注生産による唯一無二の品質</li>
+                <li>欧州統一価格€1,295での提供</li>
+            </ul>
+            
+            <h2>市場への影響</h2>
+            <p>本コレクションは、ラグジュアリージュエリー市場に新たなカテゴリを創出し、日本の伝統工芸の国際的認知度向上に貢献することが期待されます。</p>
+        </div>
+        
+        <div class="press-facts">
+            <h3>企業概要</h3>
+            <ul>
+                <li>
+                    <span class="fact-label">会社名</span>
+                    <span class="fact-value">FOMUS PARURE</span>
+                </li>
+                <li>
+                    <span class="fact-label">設立</span>
+                    <span class="fact-value">2024年</span>
+                </li>
+                <li>
+                    <span class="fact-label">所在地</span>
+                    <span class="fact-value">東京、日本</span>
+                </li>
+                <li>
+                    <span class="fact-label">事業内容</span>
+                    <span class="fact-value">ラグジュアリーアートジュエリーの企画・製造・販売</span>
+                </li>
+                <li>
+                    <span class="fact-label">対応言語</span>
+                    <span class="fact-value">日本語、英語、アラビア語、フランス語、中国語</span>
+                </li>
+                <li>
+                    <span class="fact-label">販売価格</span>
+                    <span class="fact-value">€1,295（森・極コレクション）/ €2,000-€10,000（天コレクション）</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="press-contact">
+            <h3>🎤 メディア関係者お問い合わせ先</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <span>press@fomus-parure.com</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <span>+81-3-1234-5678</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🌐</span>
+                    <span>https://fomus-parure.com</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <span>東京、日本</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="press-assets">
+            <h3>📁 メディア素材・ダウンロード</h3>
+            <div class="asset-grid">
+                <div class="asset-item">
+                    <div class="asset-icon">🖼️</div>
+                    <div class="asset-title">ロゴ素材</div>
+                    <div class="asset-desc">高解像度ロゴ（PNG、SVG）</div>
+                    <button class="download-btn">ダウンロード</button>
+                </div>
+                <div class="asset-item">
+                    <div class="asset-icon">📸</div>
+                    <div class="asset-title">製品画像</div>
+                    <div class="asset-desc">森コレクション高画質写真</div>
+                    <button class="download-btn">ダウンロード</button>
+                </div>
+                <div class="asset-item">
+                    <div class="asset-icon">👥</div>
+                    <div class="asset-title">代表者写真</div>
+                    <div class="asset-desc">経営陣プロフィール写真</div>
+                    <button class="download-btn">ダウンロード</button>
+                </div>
+                <div class="asset-item">
+                    <div class="asset-icon">📄</div>
+                    <div class="asset-title">会社概要</div>
+                    <div class="asset-desc">詳細企業情報（PDF）</div>
+                    <button class="download-btn">ダウンロード</button>
+                </div>
+                <div class="asset-item">
+                    <div class="asset-icon">📊</div>
+                    <div class="asset-title">市場データ</div>
+                    <div class="asset-desc">業界分析・統計資料</div>
+                    <button class="download-btn">ダウンロード</button>
+                </div>
+                <div class="asset-item">
+                    <div class="asset-icon">🎬</div>
+                    <div class="asset-title">動画素材</div>
+                    <div class="asset-desc">製品紹介映像</div>
+                    <button class="download-btn">ダウンロード</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // ダウンロードボタンの機能
+        document.querySelectorAll('.download-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // 実際の実装では、各素材のダウンロードリンクを設定
+                alert('メディア素材のダウンロード機能は実装中です。press@fomus-parure.comまでお問い合わせください。');
+            });
+        });
+        
+        // 印刷機能
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'p') {
+                window.print();
+            }
+        });
+    </script>
+</body>
+</html>

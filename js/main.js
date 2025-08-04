@@ -156,7 +156,12 @@ function validateForm(form) {
 function showLoading() {
     const loader = document.createElement('div');
     loader.className = 'loader';
-    loader.innerHTML = '<div class="loader__spinner"></div>';
+    
+    // セキュア：innerHTMLではなく要素作成を使用
+    const spinner = document.createElement('div');
+    spinner.className = 'loader__spinner';
+    loader.appendChild(spinner);
+    
     document.body.appendChild(loader);
 }
 
@@ -263,7 +268,13 @@ function updatePrices(region) {
             if (collection === 'ten') {
                 const currency = currencySettings[region];
                 const fromText = region === 'jp' ? 'から' : '+';
-                element.innerHTML = `${currency.symbol}${price.toLocaleString()}<span style="font-size: 16px;">${fromText}</span>`;
+                
+                // セキュア：innerHTMLではなく要素作成を使用
+                element.textContent = `${currency.symbol}${price.toLocaleString()}`;
+                const fromSpan = document.createElement('span');
+                fromSpan.style.fontSize = '16px';
+                fromSpan.textContent = fromText;
+                element.appendChild(fromSpan);
             } else {
                 element.textContent = formatPrice(price, region);
             }

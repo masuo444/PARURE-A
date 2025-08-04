@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    
+    <!-- Language Selection Page -->
+    <url>
+        <loc>https://fomus-parure.com/language-select.html</loc>
+        <lastmod>2024-08-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Main Pages - Japanese -->
+    <url>
+        <loc>https://fomus-parure.com/index-ja.html</loc>
+        <lastmod>2024-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fomus-parure.com/index-en.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fomus-parure.com/index-ar.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fomus-parure.com/index-fr.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://fomus-parure.com/index-zh.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://fomus-parure.com/index-ja.html"/>
+    </url>
+    
+    <!-- Main Pages - English -->
+    <url>
+        <loc>https://fomus-parure.com/index-en.html</loc>
+        <lastmod>2024-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://fomus-parure.com/index-ja.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fomus-parure.com/index-ar.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fomus-parure.com/index-fr.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://fomus-parure.com/index-zh.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fomus-parure.com/index-en.html"/>
+    </url>
+    
+    <!-- Main Pages - Arabic -->
+    <url>
+        <loc>https://fomus-parure.com/index-ar.html</loc>
+        <lastmod>2024-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://fomus-parure.com/index-ja.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fomus-parure.com/index-en.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fomus-parure.com/index-fr.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://fomus-parure.com/index-zh.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fomus-parure.com/index-ar.html"/>
+    </url>
+    
+    <!-- Main Pages - French -->
+    <url>
+        <loc>https://fomus-parure.com/index-fr.html</loc>
+        <lastmod>2024-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://fomus-parure.com/index-ja.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fomus-parure.com/index-en.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fomus-parure.com/index-ar.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://fomus-parure.com/index-zh.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fomus-parure.com/index-fr.html"/>
+    </url>
+    
+    <!-- Main Pages - Chinese -->
+    <url>
+        <loc>https://fomus-parure.com/index-zh.html</loc>
+        <lastmod>2024-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://fomus-parure.com/index-ja.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fomus-parure.com/index-en.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fomus-parure.com/index-ar.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fomus-parure.com/index-fr.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://fomus-parure.com/index-zh.html"/>
+    </url>
+    
+    <!-- Collection Pages - Mori -->
+    <url>
+        <loc>https://fomus-parure.com/mori-ja.html</loc>
+        <lastmod>2024-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fomus-parure.com/mori-en.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fomus-parure.com/mori-ar.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fomus-parure.com/mori-fr.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://fomus-parure.com/mori-zh.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://fomus-parure.com/mori-ja.html"/>
+    </url>
+    
+    <url>
+        <loc>https://fomus-parure.com/mori-en.html</loc>
+        <lastmod>2024-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://fomus-parure.com/mori-ja.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fomus-parure.com/mori-ar.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fomus-parure.com/mori-fr.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://fomus-parure.com/mori-zh.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fomus-parure.com/mori-en.html"/>
+    </url>
+    
+    <url>
+        <loc>https://fomus-parure.com/mori-ar.html</loc>
+        <lastmod>2024-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://fomus-parure.com/mori-ja.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fomus-parure.com/mori-en.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fomus-parure.com/mori-fr.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://fomus-parure.com/mori-zh.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fomus-parure.com/mori-ar.html"/>
+    </url>
+    
+    <url>
+        <loc>https://fomus-parure.com/mori-fr.html</loc>
+        <lastmod>2024-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://fomus-parure.com/mori-ja.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fomus-parure.com/mori-en.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fomus-parure.com/mori-ar.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://fomus-parure.com/mori-zh.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fomus-parure.com/mori-fr.html"/>
+    </url>
+    
+    <url>
+        <loc>https://fomus-parure.com/mori-zh.html</loc>
+        <lastmod>2024-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://fomus-parure.com/mori-ja.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fomus-parure.com/mori-en.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fomus-parure.com/mori-ar.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fomus-parure.com/mori-fr.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://fomus-parure.com/mori-zh.html"/>
+    </url>
+    
+    <!-- Collection Pages - Ten -->
+    <url>
+        <loc>https://fomus-parure.com/ten-ja.html</loc>
+        <lastmod>2024-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fomus-parure.com/ten-en.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fomus-parure.com/ten-ar.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fomus-parure.com/ten-fr.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://fomus-parure.com/ten-zh.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://fomus-parure.com/ten-ja.html"/>
+    </url>
+    
+    <url>
+        <loc>https://fomus-parure.com/ten-en.html</loc>
+        <lastmod>2024-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://fomus-parure.com/ten-ja.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fomus-parure.com/ten-ar.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fomus-parure.com/ten-fr.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://fomus-parure.com/ten-zh.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fomus-parure.com/ten-en.html"/>
+    </url>
+    
+    <url>
+        <loc>https://fomus-parure.com/ten-ar.html</loc>
+        <lastmod>2024-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://fomus-parure.com/ten-ja.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fomus-parure.com/ten-en.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fomus-parure.com/ten-fr.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://fomus-parure.com/ten-zh.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fomus-parure.com/ten-ar.html"/>
+    </url>
+    
+    <url>
+        <loc>https://fomus-parure.com/ten-fr.html</loc>
+        <lastmod>2024-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://fomus-parure.com/ten-ja.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fomus-parure.com/ten-en.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fomus-parure.com/ten-ar.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://fomus-parure.com/ten-zh.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fomus-parure.com/ten-fr.html"/>
+    </url>
+    
+    <url>
+        <loc>https://fomus-parure.com/ten-zh.html</loc>
+        <lastmod>2024-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://fomus-parure.com/ten-ja.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fomus-parure.com/ten-en.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fomus-parure.com/ten-ar.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fomus-parure.com/ten-fr.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://fomus-parure.com/ten-zh.html"/>
+    </url>
+    
+    <!-- Collection Pages - Kiwami -->
+    <url>
+        <loc>https://fomus-parure.com/kiwami-ja.html</loc>
+        <lastmod>2024-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fomus-parure.com/kiwami-en.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fomus-parure.com/kiwami-ar.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fomus-parure.com/kiwami-fr.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://fomus-parure.com/kiwami-zh.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://fomus-parure.com/kiwami-ja.html"/>
+    </url>
+    
+    <url>
+        <loc>https://fomus-parure.com/kiwami-en.html</loc>
+        <lastmod>2024-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://fomus-parure.com/kiwami-ja.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fomus-parure.com/kiwami-ar.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fomus-parure.com/kiwami-fr.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://fomus-parure.com/kiwami-zh.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fomus-parure.com/kiwami-en.html"/>
+    </url>
+    
+    <url>
+        <loc>https://fomus-parure.com/kiwami-ar.html</loc>
+        <lastmod>2024-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://fomus-parure.com/kiwami-ja.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fomus-parure.com/kiwami-en.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fomus-parure.com/kiwami-fr.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://fomus-parure.com/kiwami-zh.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fomus-parure.com/kiwami-ar.html"/>
+    </url>
+    
+    <url>
+        <loc>https://fomus-parure.com/kiwami-fr.html</loc>
+        <lastmod>2024-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://fomus-parure.com/kiwami-ja.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fomus-parure.com/kiwami-en.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fomus-parure.com/kiwami-ar.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://fomus-parure.com/kiwami-zh.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fomus-parure.com/kiwami-fr.html"/>
+    </url>
+    
+    <url>
+        <loc>https://fomus-parure.com/kiwami-zh.html</loc>
+        <lastmod>2024-08-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://fomus-parure.com/kiwami-ja.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fomus-parure.com/kiwami-en.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fomus-parure.com/kiwami-ar.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fomus-parure.com/kiwami-fr.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://fomus-parure.com/kiwami-zh.html"/>
+    </url>
+    
+    <!-- Product Detail Pages -->
+    <url>
+        <loc>https://fomus-parure.com/product-detail-ja.html</loc>
+        <lastmod>2024-08-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fomus-parure.com/product-detail-en.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fomus-parure.com/product-detail-ar.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fomus-parure.com/product-detail-fr.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://fomus-parure.com/product-detail-zh.html"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://fomus-parure.com/product-detail-ja.html"/>
+    </url>
+    
+    <url>
+        <loc>https://fomus-parure.com/product-detail-en.html</loc>
+        <lastmod>2024-08-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://fomus-parure.com/product-detail-ja.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fomus-parure.com/product-detail-ar.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fomus-parure.com/product-detail-fr.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://fomus-parure.com/product-detail-zh.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fomus-parure.com/product-detail-en.html"/>
+    </url>
+    
+    <url>
+        <loc>https://fomus-parure.com/product-detail-ar.html</loc>
+        <lastmod>2024-08-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://fomus-parure.com/product-detail-ja.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fomus-parure.com/product-detail-en.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fomus-parure.com/product-detail-fr.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://fomus-parure.com/product-detail-zh.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fomus-parure.com/product-detail-ar.html"/>
+    </url>
+    
+    <url>
+        <loc>https://fomus-parure.com/product-detail-fr.html</loc>
+        <lastmod>2024-08-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://fomus-parure.com/product-detail-ja.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fomus-parure.com/product-detail-en.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fomus-parure.com/product-detail-ar.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://fomus-parure.com/product-detail-zh.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fomus-parure.com/product-detail-fr.html"/>
+    </url>
+    
+    <url>
+        <loc>https://fomus-parure.com/product-detail-zh.html</loc>
+        <lastmod>2024-08-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://fomus-parure.com/product-detail-ja.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fomus-parure.com/product-detail-en.html"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://fomus-parure.com/product-detail-ar.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://fomus-parure.com/product-detail-fr.html"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://fomus-parure.com/product-detail-zh.html"/>
+    </url>
+    
+    <!-- Press Release -->
+    <url>
+        <loc>https://fomus-parure.com/press-release-template.html</loc>
+        <lastmod>2024-08-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+</urlset>

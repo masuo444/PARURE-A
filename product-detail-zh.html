@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">产品详情 - FOMUS PARURE</title>
+    <meta name="description" content="探索FOMUS PARURE精美珠宝作品的最精细细节">
+    <meta name="keywords" content="奢华珠宝, 手工珠宝, 日式匠人技艺, 高端配饰, 艺人珠宝, FOMUS PARURE, 定制珠宝, 传统技艺, 定制生产珠宝">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="PARURE ogp.png" type="image/png">
+    <link rel="apple-touch-icon" href="PARURE ogp.png">
+    
+    <!-- Open Graph Protocol (OGP) Meta Tags -->
+    <meta property="og:type" content="product">
+    <meta property="og:title" content="产品详情 - FOMUS PARURE">
+    <meta property="og:description" content="探索FOMUS PARURE精美珠宝作品的最精细细节">
+    <meta property="og:image" content="PARURE ogp.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="product-detail-zh.html">
+    <meta property="og:site_name" content="FOMUS PARURE">
+    <meta property="og:locale" content="zh_CN">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="产品详情 - FOMUS PARURE">
+    <meta name="twitter:description" content="探索FOMUS PARURE精美珠宝作品的最精细细节">
+    <meta name="twitter:image" content="PARURE ogp.png">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="author" content="FOMUS PARURE">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="product-detail-zh.html">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/collection.css">
+    <link rel="stylesheet" href="css/language-selector.css">
+    <link rel="stylesheet" href="css/mobile-premium.css">
+    
+    <style>
+        .product-detail-page {
+            padding-top: 100px;
+            min-height: 100vh;
+            background: #fafafa;
+        }
+        
+        .product-detail-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .product-detail-main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            background: white;
+            border-radius: 20px;
+            padding: 60px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            margin-bottom: 60px;
+        }
+        
+        .product-gallery {
+            position: relative;
+        }
+        
+        .product-gallery__main {
+            position: relative;
+            aspect-ratio: 1;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #f8f9fa;
+            margin-bottom: 20px;
+        }
+        
+        .product-gallery__main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .product-gallery__zoom {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(10px);
+            border: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .product-gallery__zoom:hover {
+            background: white;
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-breadcrumb {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .product-breadcrumb a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .product-breadcrumb a:hover {
+            color: #27ae60;
+        }
+        
+        .product-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 600;
+            color: #333;
+            margin: 0 0 16px 0;
+            line-height: 1.2;
+        }
+        
+        .product-price {
+            font-size: 32px;
+            font-weight: 700;
+            color: #27ae60;
+            margin: 0 0 24px 0;
+        }
+        
+        .product-description {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 32px;
+        }
+        
+        .product-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+        
+        .feature-badge {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border: 1px solid #dee2e6;
+            color: #495057;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .product-specifications {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .specifications-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin: 0 0 16px 0;
+        }
+        
+        .specification-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .specification-item:last-child {
+            border-bottom: none;
+        }
+        
+        .specification-label {
+            font-weight: 500;
+            color: #666;
+        }
+        
+        .specification-value {
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .product-actions {
+            margin-top: auto;
+        }
+        
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .quantity-label {
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .quantity-btn {
+            background: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        
+        .quantity-btn:hover {
+            background: #f8f9fa;
+        }
+        
+        .quantity-input {
+            border: none;
+            width: 60px;
+            height: 40px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 16px;
+            background: white;
+        }
+        
+        .add-to-cart-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            border: none;
+            padding: 18px 32px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+            margin-bottom: 16px;
+        }
+        
+        .add-to-cart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+        }
+        
+        .buy-now-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            border: none;
+            padding: 18px 32px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: 0 4px 12px rgba(44, 62, 80, 0.3);
+        }
+        
+        .buy-now-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(44, 62, 80, 0.4);
+        }
+        
+        .related-products {
+            background: white;
+            border-radius: 20px;
+            padding: 60px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+        
+        .related-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: #333;
+            text-align: center;
+            margin: 0 0 40px 0;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .related-item {
+            background: #f8f9fa;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .related-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .related-item__image {
+            aspect-ratio: 1;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .related-item__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .related-item:hover .related-item__image img {
+            transform: scale(1.05);
+        }
+        
+        .related-item__info {
+            padding: 20px;
+        }
+        
+        .related-item__name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin: 0 0 8px 0;
+            line-height: 1.3;
+        }
+        
+        .related-item__price {
+            font-size: 18px;
+            font-weight: 700;
+            color: #27ae60;
+            margin: 0;
+        }
+        
+        @media (max-width: 1024px) {
+            .product-detail-main {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 40px 30px;
+            }
+            
+            .product-title {
+                font-size: 36px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .product-detail-page {
+                padding-top: 80px;
+            }
+            
+            .product-detail-container {
+                padding: 0 16px;
+            }
+            
+            .product-detail-main {
+                padding: 30px 20px;
+                border-radius: 16px;
+            }
+            
+            .product-title {
+                font-size: 28px;
+            }
+            
+            .product-price {
+                font-size: 24px;
+            }
+            
+            .related-products {
+                padding: 40px 20px;
+            }
+            
+            .related-title {
+                font-size: 28px;
+            }
+        }
+        
+        .loading-state {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+            font-size: 18px;
+            color: #666;
+        }
+        
+        .error-state {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .error-state h2 {
+            font-size: 28px;
+            color: #e74c3c;
+            margin-bottom: 16px;
+        }
+        
+        .error-state p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 24px;
+        }
+        
+        .error-state .btn {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .error-state .btn:hover {
+            background: #2ecc71;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__logo">
+                <a href="index-zh.html">
+                    <span class="nav__logo-text">FOMUS PARURE</span>
+                </a>
+            </div>
+            
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index-zh.html#story" class="nav__link" data-translate="nav-brand">BRAND</a></li>
+                    <li class="nav__item"><a href="index-zh.html#products" class="nav__link" data-translate="nav-collections">COLLECTIONS</a></li>
+                    <li class="nav__item"><a href="index-zh.html#story" class="nav__link" data-translate="nav-story">STORY</a></li>
+                    <li class="nav__item"><a href="index-zh.html#contact" class="nav__link" data-translate="nav-contact">CONTACT</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav__language">
+                <div class="language-selector">
+                    <button class="language-selector__toggle" id="language-toggle">
+                        <span class="language-selector__current" id="current-language">EN</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="language-selector__dropdown" id="language-dropdown">
+                        <button class="language-option" data-lang="en">
+                            <span class="language-flag">🇺🇸</span>
+                            <span class="language-name">English</span>
+                        </button>
+                        <button class="language-option" data-lang="ja">
+                            <span class="language-flag">🇯🇵</span>
+                            <span class="language-name">日本語</span>
+                        </button>
+                        <button class="language-option" data-lang="ar">
+                            <span class="language-flag">🇸🇦</span>
+                            <span class="language-name">العربية</span>
+                        </button>
+                        <button class="language-option" data-lang="fr">
+                            <span class="language-flag">🇫🇷</span>
+                            <span class="language-name">Français</span>
+                        </button>
+                        <button class="language-option" data-lang="zh">
+                            <span class="language-flag">🇨🇳</span>
+                            <span class="language-name">中文</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav__mobile">
+                <button class="nav__toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="product-detail-page">
+        <div class="product-detail-container">
+            <div id="loading-state" class="loading-state">
+                <div data-translate="loading-product">Loading product details...</div>
+            </div>
+            
+            <div id="error-state" class="error-state" style="display: none;">
+                <h2 data-translate="product-not-found">Product Not Found</h2>
+                <p data-translate="product-not-found-desc">The product you're looking for doesn't exist or has been removed.</p>
+                <a href="index-zh.html#products" class="btn" data-translate="browse-collections">Browse Collections</a>
+            </div>
+            
+            <div id="product-content" style="display: none;">
+                <div class="product-detail-main">
+                    <div class="product-gallery">
+                        <div class="product-gallery__main">
+                            <img id="product-image" src="" alt="">
+                            <button class="product-gallery__zoom" onclick="zoomImage()">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="m21 21-4.35-4.35"></path>
+                                    <path d="M11 8v6M8 11h6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-info">
+                        <div class="product-breadcrumb" id="product-breadcrumb">
+                            <a href="index-zh.html">Home</a> / <a href="index-zh.html#products">Collections</a> / <span id="breadcrumb-collection"></span>
+                        </div>
+                        
+                        <h1 class="product-title" id="product-title"></h1>
+                        <div class="product-price" id="product-price"></div>
+                        <div class="product-description" id="product-description"></div>
+                        
+                        <div class="product-features" id="product-features"></div>
+                        
+                        <div class="product-specifications">
+                            <h3 class="specifications-title" data-translate="specifications">Specifications</h3>
+                            <div id="product-specifications"></div>
+                        </div>
+                        
+                        <div class="product-craftsmanship" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); border-radius: 12px; padding: 24px; margin-bottom: 32px; border-left: 4px solid #27ae60;">
+                            <h3 style="font-size: 18px; font-weight: 600; color: #333; margin: 0 0 16px 0; display: flex; align-items: center; gap: 8px;">
+                                <span style="color: #27ae60;">🎨</span>
+                                <span data-translate="made-to-order-excellence">Made-to-Order Excellence</span>
+                            </h3>
+                            <p style="margin: 0 0 12px 0; color: #555; line-height: 1.6;" data-translate="made-to-order-desc1">
+                                Each FOMUS PARURE piece is <strong>meticulously handcrafted exclusively for you</strong> by our master artisans. This made-to-order approach ensures the highest quality and attention to detail that mass production simply cannot achieve.
+                            </p>
+                            <p style="margin: 0; color: #555; line-height: 1.6;" data-translate="made-to-order-desc2">
+                                <strong>Delivery Timeline:</strong> 1-2 months from order confirmation<br>
+                                <em style="color: #666; font-size: 14px;">* Your patience allows us to create something truly extraordinary just for you</em>
+                            </p>
+                        </div>
+                        
+                        <div class="product-actions">
+                            <button class="buy-now-btn" onclick="redirectToStripeCheckout()" style="width: 100%; background: linear-gradient(135deg, #27ae60, #2ecc71); margin-bottom: 16px;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 3h2l.4 2m0 0h13l-1.8 7.2a2 2 0 0 1-2 1.6H7.4a2 2 0 0 1-2-1.6L4.4 5H3"></path>
+                                    <circle cx="9" cy="20" r="1"></circle>
+                                    <circle cx="20" cy="20" r="1"></circle>
+                                </svg>
+                                <span data-translate="purchase-with-stripe">Purchase with Stripe</span>
+                            </button>
+                            
+                            <p style="text-align: center; color: #666; font-size: 14px; margin: 0; line-height: 1.5;">
+                                <span data-translate="each-piece-exclusive">Each piece is made exclusively for you</span><br>
+                                <strong style="color: #27ae60;">€1,295</strong> • <em data-translate="crafting-time">1-2 months crafting time</em>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="related-products">
+                    <h2 class="related-title" data-translate="you-may-also-like">You May Also Like</h2>
+                    <div class="related-grid" id="related-grid"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section footer__section--brand">
+                    <h3 class="footer__title">FOMUS PARURE</h3>
+                    <p class="footer__description" data-translate="footer-desc">
+                        1300 years of traditional techniques and modern design fused,<br>
+                        A unique Masu accessory brand.
+                    </p>
+                    <div class="footer__contact">
+                        <p>📧 info@fomus-parure.com</p>
+                        <p>📞 03-1234-5678</p>
+                    </div>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle" data-translate="footer-collections">Collections</h4>
+                    <ul class="footer__list">
+                        <li><a href="mori-zh.html">森 (Mori)</a></li>
+                        <li><a href="ten-zh.html">天 (Ten)</a></li>
+                        <li><a href="kiwami-zh.html">極 (Kiwami)</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle" data-translate="footer-services">Services</h4>
+                    <ul class="footer__list">
+                        <li><a href="index-zh.html#story" data-translate="footer-brand-story">Brand Story</a></li>
+                        <li><a href="index-zh.html#about" data-translate="footer-craftsmanship">Craftsmanship</a></li>
+                        <li><a href="index-zh.html#guarantee" data-translate="footer-quality">Quality Guarantee</a></li>
+                        <li><a href="index-zh.html#contact" data-translate="nav-contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle" data-translate="footer-company">Company Information</h4>
+                    <ul class="footer__list">
+                        <li><a href="index-zh.html#about" data-translate="footer-about">About Us</a></li>
+                        <li><a href="index-zh.html#story" data-translate="footer-privacy">Privacy Policy</a></li>
+                        <li><a href="index-zh.html#story" data-translate="footer-terms">Terms of Service</a></li>
+                        <li><a href="index-zh.html#story" data-translate="footer-law">Commercial Transaction Act</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 FOMUS PARURE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/language-redirect.js"></script>
+    <script src="js/multilang.js"></script>
+    <script>
+        // 中国語版ページの言語設定
+        document.addEventListener('DOMContentLoaded', function() {
+            localStorage.setItem('fomus_language', 'zh');
+            
+            // languageManagerが利用可能になるまで待機
+            function waitForLanguageManager() {
+                if (window.languageManager) {
+                    window.languageManager.changeLanguage('zh');
+                } else {
+                    setTimeout(waitForLanguageManager, 100);
+                }
+            }
+            waitForLanguageManager();
+        });
+    </script>
+    <script src="js/main.js"></script>
+    <script src="js/pricing.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/mobile-premium.js"></script>
+    
+    <script>
+        let currentProduct = null;
+        let currentCollection = null;
+        
+        // URLパラメータから商品情報を取得
+        function getProductFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+            const collection = urlParams.get('collection') || 'mori';
+            
+            if (!productId) {
+                showError();
+                return;
+            }
+            
+            currentProduct = window.productManager.getProduct(collection, productId);
+            currentCollection = collection;
+            
+            if (!currentProduct) {
+                showError();
+                return;
+            }
+            
+            loadProduct();
+        }
+        
+        function showError() {
+            document.getElementById('loading-state').style.display = 'none';
+            document.getElementById('error-state').style.display = 'block';
+            document.getElementById('product-content').style.display = 'none';
+        }
+        
+        function loadProduct() {
+            document.getElementById('loading-state').style.display = 'none';
+            document.getElementById('error-state').style.display = 'none';
+            document.getElementById('product-content').style.display = 'block';
+            
+            // ページタイトル更新
+            document.getElementById('page-title').textContent = `${currentProduct.name} - FOMUS PARURE`;
+            
+            // 商品情報を表示
+            document.getElementById('product-image').src = currentProduct.images[0];
+            document.getElementById('product-image').alt = currentProduct.name;
+            document.getElementById('product-title').textContent = currentProduct.name;
+            document.getElementById('product-price').textContent = window.productManager.formatPrice(currentProduct);
+            document.getElementById('product-description').textContent = window.productManager.getProductDescription(currentProduct);
+            
+            // パンくずリスト
+            const collectionName = currentCollection.charAt(0).toUpperCase() + currentCollection.slice(1);
+            document.getElementById('breadcrumb-collection').textContent = collectionName;
+            
+            // フィーチャー表示
+            const featuresHTML = currentProduct.features.map(feature => `
+                <div class="feature-badge">
+                    <span class="feature-badge__icon">✨</span>
+                    <span class="feature-badge__text">${feature}</span>
+                </div>
+            `).join('');
+            document.getElementById('product-features').innerHTML = featuresHTML;
+            
+            // 仕様表示
+            const specificationsHTML = Object.entries(currentProduct.specifications).map(([key, value]) => `
+                <div class="specification-item">
+                    <span class="specification-label">${key.charAt(0).toUpperCase() + key.slice(1)}:</span>
+                    <span class="specification-value">${value}</span>
+                </div>
+            `).join('');
+            document.getElementById('product-specifications').innerHTML = specificationsHTML;
+            
+            // 関連商品表示
+            loadRelatedProducts();
+        }
+        
+        function loadRelatedProducts() {
+            const allProducts = window.productManager.getCollectionProducts(currentCollection);
+            const relatedProducts = allProducts.filter(p => p.id !== currentProduct.id).slice(0, 3);
+            
+            const relatedHTML = relatedProducts.map(product => `
+                <div class="related-item" onclick="viewProduct('${product.id}', '${currentCollection}')">
+                    <div class="related-item__image">
+                        <img src="${product.images[0]}" alt="${product.name}">
+                    </div>
+                    <div class="related-item__info">
+                        <h4 class="related-item__name">${product.name}</h4>
+                        <p class="related-item__price">${window.productManager.formatPrice(product)}</p>
+                    </div>
+                </div>
+            `).join('');
+            
+            document.getElementById('related-grid').innerHTML = relatedHTML;
+        }
+        
+        function redirectToStripeCheckout() {
+            if (!currentProduct) {
+                alert('Product information not available. Please refresh the page.');
+                return;
+            }
+            
+            // 商品情報をローカルストレージに保存
+            const orderData = {
+                id: currentProduct.id,
+                name: currentProduct.name,
+                price: currentProduct.price,
+                image: currentProduct.images[0],
+                collection: currentCollection,
+                quantity: 1,
+                timestamp: Date.now()
+            };
+            
+            localStorage.setItem('fomus_stripe_order', JSON.stringify(orderData));
+            
+            // 実際の実装では、ここで商品固有のStripe Payment LinkやCheckout Session URLにリダイレクトします
+            // 例: 各商品に対応するStripe Payment Linkを事前に作成しておく
+            
+            // 商品別のStripe URL（実際の環境では適切なURLに置き換えてください）
+            const stripeUrls = {
+                'mori-necklace-18k': 'https://buy.stripe.com/test_fomus_necklace_18k',
+                'mori-necklace-yellow': 'https://buy.stripe.com/test_fomus_necklace_yellow',
+                'mori-earring-red-blossom': 'https://buy.stripe.com/test_fomus_earring_red',
+                'mori-earring-white-blossom': 'https://buy.stripe.com/test_fomus_earring_white',
+                'mori-earring-white-flower': 'https://buy.stripe.com/test_fomus_earring_white_flower',
+                'mori-earring-yellow-flower': 'https://buy.stripe.com/test_fomus_earring_yellow',
+                'mori-pierce-black-blossom': 'https://buy.stripe.com/test_fomus_pierce_black',
+                'mori-pierce-temari-white': 'https://buy.stripe.com/test_fomus_pierce_temari',
+                'mori-earring-tonbo-dama-blue': 'https://buy.stripe.com/test_fomus_earring_tonbo',
+                'mori-kanzashi': 'https://buy.stripe.com/test_fomus_kanzashi',
+                'ten-custom-consultation': 'https://buy.stripe.com/test_fomus_ten_custom',
+                'kiwami-ultimate-set': 'https://buy.stripe.com/test_fomus_kiwami_set'
+            };
+            
+            const stripeUrl = stripeUrls[currentProduct.id];
+            
+            if (stripeUrl) {
+                // 実際のStripe URLにリダイレクト
+                console.log('Redirecting to Stripe for product:', currentProduct.name);
+                console.log('Stripe URL:', stripeUrl);
+                
+                // 実際の実装ではこの行のコメントを外してください
+                // window.location.href = stripeUrl;
+                
+                // デモ用：成功ページに直接リダイレクト
+                setTimeout(() => {
+                    // 注文情報を成功ページ用に保存
+                    localStorage.setItem('fomus_last_order', JSON.stringify([orderData]));
+                    localStorage.setItem('fomus_order_total', currentProduct.price.toString());
+                    localStorage.setItem('fomus_payment_method', 'Stripe Checkout');
+                    
+                    // 成功ページにリダイレクト
+                    window.location.href = 'payment-success-zh.html?payment_intent=pi_' + currentProduct.id + '_' + Date.now();
+                }, 1000);
+            } else {
+                alert('Stripe checkout not configured for this product. Please contact support.');
+            }
+        }
+        
+        function viewProduct(productId, collection) {
+            window.location.href = `product-detail-zh.html?id=${productId}&collection=${collection}`;
+        }
+        
+        function zoomImage() {
+            const img = document.getElementById('product-image');
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.9);
+                z-index: 10000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: zoom-out;
+            `;
+            
+            const zoomedImg = document.createElement('img');
+            zoomedImg.src = img.src;
+            zoomedImg.style.cssText = `
+                max-width: 90%;
+                max-height: 90%;
+                object-fit: contain;
+                border-radius: 8px;
+            `;
+            
+            modal.appendChild(zoomedImg);
+            document.body.appendChild(modal);
+            
+            modal.onclick = () => document.body.removeChild(modal);
+        }
+        
+        
+        
+        // ページ読み込み時に商品データを取得
+        document.addEventListener('DOMContentLoaded', function() {
+            // 少し遅延させてローディング効果を出す
+            setTimeout(getProductFromURL, 500);
+        });
+    </script>
+</body>
+</html>

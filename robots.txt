@@ -1,0 +1,61 @@
+# Robots.txt for FOMUS PARURE - Luxury Jewelry Brand
+# https://fomus-parure.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://fomus-parure.com/sitemap.xml
+
+# Priority pages for crawling
+Allow: /index-*.html
+Allow: /mori-*.html
+Allow: /ten-*.html
+Allow: /kiwami-*.html
+Allow: /product-detail-*.html
+Allow: /language-select.html
+Allow: /press-release-template.html
+
+# Allow CSS and JS files
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
+
+# Block potentially sensitive files
+Disallow: /admin/
+Disallow: /private/
+Disallow: /backup/
+Disallow: /*.log$
+Disallow: /*.tmp$
+Disallow: /test/
+Disallow: /dev/
+
+# Crawl delay (optional - for politeness)
+Crawl-delay: 1
+
+# Host preference (for international sites)
+Host: https://fomus-parure.com
+
+# Special instructions for major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /

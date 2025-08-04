@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>セキュリティ設定ガイド - FOMUS PARURE</title>
+    
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' https://js.stripe.com https://cdn.tailwindcss.com https://fonts.googleapis.com;
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com;
+        font-src 'self' https://fonts.gstatic.com;
+        img-src 'self' data: https: blob:;
+        connect-src 'self' https://api.stripe.com https://checkout.stripe.com;
+        frame-src https://js.stripe.com https://hooks.stripe.com;
+        object-src 'none';
+        base-uri 'self';
+        form-action 'self' https://checkout.stripe.com;
+    ">
+    
+    <!-- Security Headers (for server configuration reference) -->
+    <!-- X-Frame-Options: DENY -->
+    <!-- X-Content-Type-Options: nosniff -->
+    <!-- X-XSS-Protection: 1; mode=block -->
+    <!-- Strict-Transport-Security: max-age=31536000; includeSubDomains; preload -->
+    <!-- Referrer-Policy: strict-origin-when-cross-origin -->
+    <!-- Permissions-Policy: geolocation=(), microphone=(), camera=() -->
+    
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        
+        .security-guide {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #27ae60;
+            border-bottom: 3px solid #27ae60;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-top: 30px;
+        }
+        
+        .critical {
+            background: #ffe6e6;
+            border-left: 4px solid #e74c3c;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .medium {
+            background: #fff8e1;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .low {
+            background: #e8f5e8;
+            border-left: 4px solid #27ae60;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .code-block {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 14px;
+            margin: 15px 0;
+        }
+        
+        .recommendation {
+            background: #e3f2fd;
+            border: 1px solid #2196f3;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        ul {
+            padding-left: 25px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .status.critical { background: #e74c3c; }
+        .status.medium { background: #f39c12; }
+        .status.low { background: #27ae60; }
+    </style>
+</head>
+<body>
+    <div class="security-guide">
+        <h1>🔒 FOMUS PARURE セキュリティ設定ガイド</h1>
+        
+        <div class="critical">
+            <h3><span class="status critical">CRITICAL</span> 緊急対応が必要な問題</h3>
+            <p>これらの問題は即座に対応する必要があります。</p>
+        </div>
+        
+        <h2>1. Content Security Policy (CSP) の実装</h2>
+        <div class="critical">
+            <p><strong>問題:</strong> CSPヘッダーが実装されていない</p>
+            <p><strong>リスク:</strong> XSS攻撃、コードインジェクション、データ盗取の脆弱性</p>
+            <p><strong>影響:</strong> 悪意のあるスクリプトが任意のソースから実行可能</p>
+        </div>
+        
+        <div class="recommendation">
+            <h4>推奨設定:</h4>
+            <div class="code-block">
+&lt;meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' https://js.stripe.com;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    img-src 'self' data: https: blob:;
+    connect-src 'self' https://api.stripe.com;
+    frame-src https://js.stripe.com;
+    object-src 'none';
+"&gt;
+            </div>
+        </div>
+        
+        <h2>2. セキュリティヘッダーの設定</h2>
+        <div class="critical">
+            <p><strong>問題:</strong> 必要なセキュリティヘッダーが不足</p>
+            <p><strong>リスク:</strong> クリックジャッキング、MIMEタイプ混乱攻撃、中間者攻撃</p>
+        </div>
+        
+        <div class="recommendation">
+            <h4>サーバー設定に追加が必要:</h4>
+            <div class="code-block">
+# Apache .htaccess の場合
+Header always set X-Frame-Options "DENY"
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-XSS-Protection "1; mode=block"
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+# Nginx の場合
+add_header X-Frame-Options "DENY" always;
+add_header X-Content-Type-Options "nosniff" always;
+add_header X-XSS-Protection "1; mode=block" always;
+add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
+add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+            </div>
+        </div>
+        
+        <h2>3. DOM操作の安全性</h2>
+        <div class="critical">
+            <p><strong>問題:</strong> innerHTML による安全でないDOM操作</p>
+            <p><strong>場所:</strong> cart.js, multilang.js, main.js</p>
+            <p><strong>リスク:</strong> XSS脆弱性、コンテンツインジェクション</p>
+        </div>
+        
+        <div class="recommendation">
+            <h4>修正例:</h4>
+            <div class="code-block">
+// 危険な方法
+element.innerHTML = userInput;
+
+// 安全な方法
+element.textContent = userInput;
+
+// HTMLが必要な場合
+function sanitizeHTML(str) {
+    const temp = document.createElement('div');
+    temp.textContent = str;
+    return temp.innerHTML;
+}
+element.innerHTML = sanitizeHTML(userInput);
+            </div>
+        </div>
+        
+        <div class="medium">
+            <h3><span class="status medium">MEDIUM</span> 対応が推奨される問題</h3>
+        </div>
+        
+        <h2>4. 外部依存関係のセキュリティ</h2>
+        <div class="medium">
+            <p><strong>問題:</strong> SRI (Subresource Integrity) チェックなしで外部リソースを読み込み</p>
+            <p><strong>リスク:</strong> CDN侵害時のサプライチェーン攻撃</p>
+        </div>
+        
+        <div class="recommendation">
+            <h4>SRIハッシュの追加:</h4>
+            <div class="code-block">
+&lt;script src="https://js.stripe.com/v3/" 
+        integrity="sha384-[hash]" 
+        crossorigin="anonymous"&gt;&lt;/script&gt;
+
+&lt;link href="https://fonts.googleapis.com/css2?family=..." 
+      integrity="sha384-[hash]" 
+      crossorigin="anonymous"&gt;
+            </div>
+        </div>
+        
+        <h2>5. データストレージのセキュリティ</h2>
+        <div class="medium">
+            <p><strong>問題:</strong> localStorageに暗号化なしで機密データを保存</p>
+            <p><strong>リスク:</strong> セッション持続性、悪意のあるスクリプトによるアクセス</p>
+        </div>
+        
+        <div class="recommendation">
+            <h4>推奨対策:</h4>
+            <ul>
+                <li>機密データは暗号化してから保存</li>
+                <li>一時的なデータはsessionStorageを使用</li>
+                <li>データの有効期限を設定</li>
+                <li>不要になったデータは削除</li>
+            </ul>
+        </div>
+        
+        <h2>6. 価格検証のセキュリティ</h2>
+        <div class="medium">
+            <p><strong>問題:</strong> 価格ロジックがクライアントサイドのみで処理</p>
+            <p><strong>リスク:</strong> クライアントサイドの変更による価格操作</p>
+        </div>
+        
+        <div class="recommendation">
+            <h4>推奨対策:</h4>
+            <ul>
+                <li>サーバーサイドでの価格検証を実装</li>
+                <li>決済時の価格再検証</li>
+                <li>価格変更の監査ログ</li>
+            </ul>
+        </div>
+        
+        <div class="low">
+            <h3><span class="status low">LOW</span> ベストプラクティス</h3>
+        </div>
+        
+        <h2>7. 入力検証の強化</h2>
+        <div class="low">
+            <p><strong>改善点:</strong> より厳密な入力検証の実装</p>
+        </div>
+        
+        <div class="recommendation">
+            <h4>推奨実装:</h4>
+            <div class="code-block">
+function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function validatePhone(phone) {
+    const phoneRegex = /^[+]?[\d\s\-\(\)]+$/;
+    return phoneRegex.test(phone) && phone.replace(/\D/g, '').length >= 10;
+}
+
+function sanitizeInput(input) {
+    return input.trim().replace(/[<>]/g, '');
+}
+            </div>
+        </div>
+        
+        <h2>8. レート制限の実装</h2>
+        <div class="low">
+            <p><strong>改善点:</strong> フォーム送信とAPIエンドポイントのレート制限</p>
+        </div>
+        
+        <div class="recommendation">
+            <h4>推奨対策:</h4>
+            <ul>
+                <li>フォーム送信のレート制限</li>
+                <li>機密フォームにCAPTCHA追加</li>
+                <li>異常な活動パターンの監視</li>
+            </ul>
+        </div>
+        
+        <h2>🔧 実装チェックリスト</h2>
+        
+        <div class="recommendation">
+            <h4>緊急対応 (24時間以内):</h4>
+            <ul>
+                <li>☐ CSPヘッダーの実装</li>
+                <li>☐ セキュリティヘッダーの設定</li>
+                <li>☐ innerHTML使用箇所の修正</li>
+            </ul>
+            
+            <h4>中期対応 (1週間以内):</h4>
+            <ul>
+                <li>☐ SRIハッシュの追加</li>
+                <li>☐ データストレージの暗号化</li>
+                <li>☐ サーバーサイド価格検証の実装</li>
+                <li>☐ テスト用URLの削除</li>
+            </ul>
+            
+            <h4>長期改善 (1ヶ月以内):</h4>
+            <ul>
+                <li>☐ 入力検証の強化</li>
+                <li>☐ レート制限の実装</li>
+                <li>☐ セキュリティ監視の導入</li>
+                <li>☐ 定期的なセキュリティスキャン</li>
+            </ul>
+        </div>
+        
+        <h2>📞 サポート情報</h2>
+        <div class="recommendation">
+            <p><strong>セキュリティに関する質問や懸念事項がある場合:</strong></p>
+            <ul>
+                <li>📧 security@fomus-parure.com</li>
+                <li>🔒 このガイドの定期的な見直しを推奨</li>
+                <li>🛡️ セキュリティインシデント発生時の即座な報告</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        // このページ自体もセキュリティのベストプラクティスに従う
+        document.addEventListener('DOMContentLoaded', function() {
+            // XSSテスト防止
+            const urlParams = new URLSearchParams(window.location.search);
+            for (const [key, value] of urlParams) {
+                if (value.includes('<script>') || value.includes('javascript:')) {
+                    console.warn('Potentially malicious URL parameter detected');
+                    window.location.href = window.location.pathname;
+                    break;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

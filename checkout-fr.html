@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - FOMUS PARURE</title>
+    <meta name="description" content="Complete your FOMUS PARURE purchase with secure checkout.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/language-selector.css">
+    <link rel="stylesheet" href="css/mobile-premium.css">
+    
+    <!-- Stripe JS -->
+    <script src="https://js.stripe.com/v3/"></script>
+    
+    <style>
+        .checkout-page {
+            padding-top: 100px;
+            min-height: 100vh;
+            background: #fafafa;
+        }
+        
+        .checkout-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .checkout-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .checkout-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 600;
+            color: #333;
+            margin: 0 0 16px 0;
+        }
+        
+        .checkout-subtitle {
+            font-size: 18px;
+            color: #666;
+            margin: 0;
+        }
+        
+        .stripe-redirect {
+            background: white;
+            border-radius: 20px;
+            padding: 60px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .stripe-logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 30px;
+        }
+        
+        .redirect-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: #333;
+            margin: 0 0 20px 0;
+        }
+        
+        .redirect-description {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+        
+        .redirect-btn {
+            background: linear-gradient(135deg, #635bff, #5a52e8);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 4px 12px rgba(99, 91, 255, 0.3);
+            text-decoration: none;
+        }
+        
+        .redirect-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 91, 255, 0.4);
+        }
+        
+        .security-note {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            border-left: 4px solid #27ae60;
+        }
+        
+        .security-note h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin: 0 0 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .security-note p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .checkout-page {
+                padding-top: 80px;
+            }
+            
+            .checkout-container {
+                padding: 0 16px;
+            }
+            
+            .stripe-redirect {
+                padding: 40px 30px;
+            }
+            
+            .checkout-title {
+                font-size: 32px;
+            }
+            
+            .redirect-title {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__logo">
+                <a href="index-fr.html">
+                    <span class="nav__logo-text">FOMUS PARURE</span>
+                </a>
+            </div>
+            
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index-fr.html#story" class="nav__link" data-translate="nav-brand">BRAND</a></li>
+                    <li class="nav__item"><a href="index-fr.html#products" class="nav__link" data-translate="nav-collections">COLLECTIONS</a></li>
+                    <li class="nav__item"><a href="index-fr.html#story" class="nav__link" data-translate="nav-story">STORY</a></li>
+                    <li class="nav__item"><a href="index-fr.html#contact" class="nav__link" data-translate="nav-contact">CONTACT</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav__language">
+                <div class="language-selector">
+                    <button class="language-selector__toggle" id="language-toggle">
+                        <span class="language-selector__current" id="current-language">EN</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="language-selector__dropdown" id="language-dropdown">
+                        <button class="language-option" data-lang="en">
+                            <span class="language-flag">🇺🇸</span>
+                            <span class="language-name">English</span>
+                        </button>
+                        <button class="language-option" data-lang="ja">
+                            <span class="language-flag">🇯🇵</span>
+                            <span class="language-name">日本語</span>
+                        </button>
+                        <button class="language-option" data-lang="ar">
+                            <span class="language-flag">🇸🇦</span>
+                            <span class="language-name">العربية</span>
+                        </button>
+                        <button class="language-option" data-lang="fr">
+                            <span class="language-flag">🇫🇷</span>
+                            <span class="language-name">Français</span>
+                        </button>
+                        <button class="language-option" data-lang="zh">
+                            <span class="language-flag">🇨🇳</span>
+                            <span class="language-name">中文</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav__mobile">
+                <button class="nav__toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="checkout-page">
+        <div class="checkout-container">
+            <div class="checkout-header">
+                <h1 class="checkout-title">Secure Checkout</h1>
+                <p class="checkout-subtitle">Complete your purchase with Stripe's secure payment processing</p>
+            </div>
+            
+            <div class="stripe-redirect">
+                <svg class="stripe-logo" viewBox="0 0 468 222.5" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="#635bff">
+                        <path d="M414,113.4c0-25.6-12.4-45.8-36.1-45.8c-23.8,0-38.2,20.2-38.2,45.6c0,30.1,17,45.3,41.4,45.3c11.9,0,20.9-2.7,27.7-6.5v-20c-6.8,3.4-14.6,5.5-24.5,5.5c-9.7,0-18.3-3.4-19.4-15.2h48.9C413.8,121,414,115.8,414,113.4z M365.6,103.9c0-11.3,6.9-16,13.2-16c6.1,0,12.6,4.7,12.6,16H365.6z"/>
+                        <path d="M301.1,67.6c-9.8,0-16.1,4.6-19.6,7.8l-1.3-6.2h-22v116.6l25-5.3l0.1-28.3c3.6,2.6,8.9,6.3,17.7,6.3c17.9,0,34.2-14.4,34.2-46.1C335.1,83.4,318.6,67.6,301.1,67.6z M295.1,136.5c-5.9,0-9.4-2.1-11.8-4.7l-0.1-37.1c2.6-2.9,6.2-4.9,11.9-4.9c9.1,0,15.4,10.2,15.4,23.3C310.5,126.5,304.3,136.5,295.1,136.5z"/>
+                        <polygon points="223.8,61.7 248.9,56.3 248.9,36 223.8,41.3 "/>
+                        <rect x="223.8" y="69" width="25.1" height="87.5"/>
+                        <path d="M196.9,76.7l-1.6-7.4h-21.6v87.5h25V97.5c5.9-7.7,15.9-6.3,19-5.2v-23C214.5,68.1,202.8,65.9,196.9,76.7z"/>
+                        <path d="M146.9,47.6l-24.4,5.2l-0.1,80.1c0,14.8,11.1,25.7,25.9,25.7c8.2,0,14.2-1.5,17.5-3.3V135c-3.2,1.3-19,5.9-19-8.9V90.6h19V69h-19L146.9,47.6z"/>
+                        <path d="M79.3,94.7c0-3.9,3.2-5.4,8.5-5.4c7.6,0,17.2,2.3,24.8,6.4V72.2c-8.3-3.3-16.5-4.6-24.8-4.6C67.5,67.6,54,78.2,54,95.9c0,27.6,38,23.2,38,35.1c0,4.6-4,6.1-9.6,6.1c-8.3,0-18.9-3.4-27.3-8v23.8c9.3,4,18.7,5.7,27.3,5.7c20.8,0,35.1-10.3,35.1-28.2C117.4,100.6,79.3,105.9,79.3,94.7z"/>
+                    </g>
+                </svg>
+                
+                <h2 class="redirect-title">Redirecting to Secure Payment</h2>
+                <p class="redirect-description">
+                    You'll be redirected to Stripe's secure payment page to complete your purchase. 
+                    Your order details and payment information are protected by industry-leading security.
+                </p>
+                
+                <button class="redirect-btn" id="stripe-redirect-btn" onclick="redirectToStripe()">
+                    <span class="loading-spinner" id="loading-spinner" style="display: none;"></span>
+                    <span id="btn-text">Continue to Payment</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9,18 15,12 9,6"></polyline>
+                    </svg>
+                </button>
+                
+                <div class="security-note">
+                    <h4>
+                        🔒 Secure Payment Processing
+                    </h4>
+                    <p>
+                        Your payment is processed securely by Stripe. We never store your credit card information. 
+                        All transactions are encrypted and comply with PCI DSS standards.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section footer__section--brand">
+                    <h3 class="footer__title">FOMUS PARURE</h3>
+                    <p class="footer__description" data-translate="footer-desc">
+                        1300 years of traditional techniques and modern design fused,<br>
+                        A unique Masu accessory brand.
+                    </p>
+                    <div class="footer__contact">
+                        <p>📧 info@fomus-parure.com</p>
+                        <p>📞 03-1234-5678</p>
+                    </div>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle" data-translate="footer-collections">Collections</h4>
+                    <ul class="footer__list">
+                        <li><a href="mori-fr.html">森 (Mori)</a></li>
+                        <li><a href="ten-fr.html">天 (Ten)</a></li>
+                        <li><a href="kiwami-fr.html">極 (Kiwami)</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle" data-translate="footer-services">Services</h4>
+                    <ul class="footer__list">
+                        <li><a href="index-fr.html#story" data-translate="footer-brand-story">Brand Story</a></li>
+                        <li><a href="index-fr.html#about" data-translate="footer-craftsmanship">Craftsmanship</a></li>
+                        <li><a href="index-fr.html#guarantee" data-translate="footer-quality">Quality Guarantee</a></li>
+                        <li><a href="index-fr.html#contact" data-translate="nav-contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle" data-translate="footer-company">Company Information</h4>
+                    <ul class="footer__list">
+                        <li><a href="index-fr.html#about" data-translate="footer-about">About Us</a></li>
+                        <li><a href="index-fr.html#story" data-translate="footer-privacy">Privacy Policy</a></li>
+                        <li><a href="index-fr.html#story" data-translate="footer-terms">Terms of Service</a></li>
+                        <li><a href="index-fr.html#story" data-translate="footer-law">Commercial Transaction Act</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 FOMUS PARURE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/language-redirect.js"></script>
+    <script src="js/multilang.js"></script>
+    <script>
+        // フランス語版ページの言語設定
+        document.addEventListener('DOMContentLoaded', function() {
+            localStorage.setItem('fomus_language', 'fr');
+            if (window.languageManager) {
+                window.languageManager.changeLanguage('fr');
+            }
+        });
+    </script>
+    <script src="js/main.js"></script>
+    <script src="js/mobile-premium.js"></script>
+    
+    <script>
+        function redirectToStripe() {
+            const btn = document.getElementById('stripe-redirect-btn');
+            const spinner = document.getElementById('loading-spinner');
+            const btnText = document.getElementById('btn-text');
+            
+            // ボタンをローディング状態に
+            btn.disabled = true;
+            spinner.style.display = 'inline-block';
+            btnText.textContent = 'Redirecting...';
+            
+            // URLパラメータから注文情報を取得
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('product_id');
+            const collection = urlParams.get('collection');
+            const quantity = urlParams.get('quantity') || '1';
+            
+            // 実際の実装では、ここで商品に応じたStripe Payment LinkまたはCheckout Session URLにリダイレクト
+            const stripeUrls = {
+                'mori-necklace-18k': 'https://buy.stripe.com/test_fomus_necklace_18k',
+                'mori-necklace-yellow': 'https://buy.stripe.com/test_fomus_necklace_yellow',
+                'mori-earring-red-blossom': 'https://buy.stripe.com/test_fomus_earring_red',
+                'mori-earring-white-blossom': 'https://buy.stripe.com/test_fomus_earring_white',
+                'mori-earring-white-flower': 'https://buy.stripe.com/test_fomus_earring_white_flower',
+                'mori-earring-yellow-flower': 'https://buy.stripe.com/test_fomus_earring_yellow',
+                'mori-pierce-black-blossom': 'https://buy.stripe.com/test_fomus_pierce_black',
+                'mori-pierce-temari-white': 'https://buy.stripe.com/test_fomus_pierce_temari',
+                'mori-earring-tonbo-dama-blue': 'https://buy.stripe.com/test_fomus_earring_tonbo',
+                'mori-kanzashi': 'https://buy.stripe.com/test_fomus_kanzashi',
+                'ten-custom-consultation': 'https://buy.stripe.com/test_fomus_ten_custom',
+                'kiwami-ultimate-set': 'https://buy.stripe.com/test_fomus_kiwami_set'
+            };
+            
+            const stripeUrl = stripeUrls[productId];
+            
+            setTimeout(() => {
+                if (stripeUrl) {
+                    // 実際のStripe URLにリダイレクト
+                    console.log('Redirecting to Stripe URL:', stripeUrl);
+                    
+                    // 実際の実装ではこの行のコメントを外してください
+                    // window.location.href = stripeUrl;
+                    
+                    // デモ用：成功ページに直接リダイレクト
+                    const orderData = {
+                        id: productId,
+                        collection: collection,
+                        quantity: parseInt(quantity),
+                        timestamp: Date.now()
+                    };
+                    
+                    localStorage.setItem('fomus_last_order', JSON.stringify([orderData]));
+                    localStorage.setItem('fomus_order_total', '1295');
+                    localStorage.setItem('fomus_payment_method', 'Stripe Checkout');
+                    
+                    window.location.href = 'payment-success-fr.html?payment_intent=pi_' + productId + '_' + Date.now();
+                } else {
+                    alert('Stripe checkout not configured for this product. Please contact support.');
+                    
+                    // ボタンを元に戻す
+                    btn.disabled = false;
+                    spinner.style.display = 'none';
+                    btnText.textContent = 'Continue to Payment';
+                }
+            }, 2000); // 2秒の遅延でリアルな感じを演出
+        }
+        
+        // ページ読み込み時に自動的にリダイレクトを開始（オプション）
+        document.addEventListener('DOMContentLoaded', function() {
+            // 自動リダイレクトを有効にする場合は以下のコメントを外してください
+            // setTimeout(redirectToStripe, 3000);
+        });
+    </script>
+</body>
+</html>

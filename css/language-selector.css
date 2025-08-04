@@ -1,0 +1,186 @@
+/* Language Selector Styles */
+.nav__language {
+    margin-right: 20px;
+}
+
+.language-selector {
+    position: relative;
+}
+
+.language-selector__toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    color: #333;
+    min-width: 70px;
+    justify-content: space-between;
+}
+
+.language-selector__toggle:hover {
+    border-color: #27ae60;
+    background: rgba(39, 174, 96, 0.05);
+}
+
+.language-selector__toggle.open {
+    border-color: #27ae60;
+    background: rgba(39, 174, 96, 0.1);
+}
+
+.language-selector__toggle.open svg {
+    transform: rotate(180deg);
+}
+
+.language-selector__current {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.language-selector__toggle svg {
+    transition: transform 0.3s ease;
+    opacity: 0.7;
+}
+
+.language-selector__dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    z-index: 1000;
+    min-width: 180px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.language-selector__dropdown.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+.language-option:last-child {
+    border-bottom: none;
+}
+
+.language-option:hover {
+    background: #f8f9fa;
+}
+
+.language-option.active {
+    background: rgba(39, 174, 96, 0.1);
+    color: #27ae60;
+    font-weight: 600;
+}
+
+.language-flag {
+    font-size: 18px;
+    width: 24px;
+    text-align: center;
+}
+
+.language-name {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* RTL Support for Arabic */
+[lang="ar"] .language-selector__dropdown {
+    left: 0;
+    right: auto;
+}
+
+[lang="ar"] .language-option {
+    text-align: right;
+    flex-direction: row-reverse;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .nav__language {
+        margin-right: 10px;
+    }
+    
+    .language-selector__toggle {
+        padding: 6px 10px;
+        min-width: 60px;
+    }
+    
+    .language-selector__current {
+        font-size: 13px;
+    }
+    
+    .language-selector__dropdown {
+        min-width: 160px;
+        right: -10px;
+    }
+    
+    .language-option {
+        padding: 10px 14px;
+    }
+    
+    .language-flag {
+        font-size: 16px;
+        width: 20px;
+    }
+    
+    .language-name {
+        font-size: 13px;
+    }
+}
+
+/* Animation for language switching */
+.language-switch-animation {
+    animation: languageSwitch 0.5s ease-in-out;
+}
+
+@keyframes languageSwitch {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; transform: translateY(-2px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Focus states for accessibility */
+.language-selector__toggle:focus,
+.language-option:focus {
+    outline: 2px solid #27ae60;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .language-selector__toggle {
+        border-color: #000;
+    }
+    
+    .language-selector__dropdown {
+        border-color: #000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+}

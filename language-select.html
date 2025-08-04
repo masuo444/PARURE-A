@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOMUS PARURE - Select Your Language</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/mobile-premium.css">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://js.stripe.com https://fonts.googleapis.com https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://api.stripe.com https://checkout.stripe.com; frame-src https://js.stripe.com https://hooks.stripe.com; object-src 'none'; base-uri 'self'; form-action 'self' https://checkout.stripe.com;">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="index, follow, max-snippet:160, max-image-preview:large">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'fomus-dark': '#1a1a1a',
+                        'fomus-gray': '#333333',
+                        'fomus-gold': '#d4af37',
+                        'fomus-light': '#fefefe',
+                        'fomus-accent': '#8b7829',
+                    },
+                    fontFamily: {
+                        heading: ['Cormorant Garamond', 'Noto Serif JP', 'serif'],
+                        body: ['Cormorant Garamond', 'Noto Sans', 'Noto Sans JP', 'sans-serif'],
+                        arabic: ['Noto Sans Arabic', 'sans-serif'],
+                        chinese: ['Noto Sans SC', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { 
+            font-family: 'Cormorant Garamond', serif; 
+            background: linear-gradient(135deg, #fefefe 0%, #f8f8f8 50%, #fefefe 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .language-card {
+            position: relative;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(26, 26, 26, 0.08);
+        }
+        .language-card::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .language-card:hover::before {
+            opacity: 1;
+        }
+        .language-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: rgba(212, 175, 55, 0.6);
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
+        }
+        .language-card:active {
+            transform: translateY(-5px) scale(1.01);
+        }
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        .slide-up {
+            animation: slideUp 0.8s ease-out forwards;
+            transform: translateY(30px);
+            opacity: 0;
+        }
+        @keyframes slideUp {
+            to { 
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .glow {
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #d4af37 0%, #f4d03f 50%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .brand-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            letter-spacing: 4px;
+        }
+        /* Decorative elements */
+        .corner-decoration {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        .corner-decoration.top-left {
+            top: -30px;
+            left: -30px;
+            border-right: none;
+            border-bottom: none;
+            transform: rotate(45deg);
+        }
+        .corner-decoration.bottom-right {
+            bottom: -30px;
+            right: -30px;
+            border-left: none;
+            border-top: none;
+            transform: rotate(45deg);
+        }
+        
+        /* Selection feedback */
+        .language-card.selected {
+            background: rgba(212, 175, 55, 0.15);
+            border-color: rgba(212, 175, 55, 0.8);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .floating {
+                display: none;
+            }
+            .corner-decoration {
+                display: none;
+            }
+            .brand-logo {
+                letter-spacing: 2px;
+            }
+        }
+        
+        /* Loading animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(254, 254, 254, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+        .loading-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(212, 175, 55, 0.3);
+            border-top: 3px solid #d4af37;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Accessibility improvements */
+        .language-card:focus {
+            outline: 2px solid #d4af37;
+            outline-offset: 4px;
+        }
+        
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .language-card {
+                border-color: #d4af37;
+            }
+            .language-card:hover {
+                border-color: #f4d03f;
+            }
+        }
+        
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            .floating,
+            .slide-up,
+            .fade-in {
+                animation: none;
+            }
+            .language-card {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-fomus-light text-fomus-dark flex items-center justify-center min-h-screen">
+    <!-- Background decorations -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-20 left-20 w-64 h-64 border border-fomus-gold/10 rounded-full floating"></div>
+        <div class="absolute bottom-20 right-20 w-96 h-96 border border-fomus-gold/10 rounded-full floating" style="animation-delay: 3s;"></div>
+        <div class="absolute top-1/2 left-1/4 w-32 h-32 border border-fomus-accent/20 rounded-full floating" style="animation-delay: 1.5s;"></div>
+        <div class="absolute top-1/3 right-1/3 w-48 h-48 border border-fomus-gold/5 rounded-full floating" style="animation-delay: 4.5s;"></div>
+    </div>
+    
+    <!-- Loading overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="text-center">
+            <div class="spinner mb-4 mx-auto"></div>
+            <p class="text-fomus-gold font-light">Loading your experience...</p>
+        </div>
+    </div>
+    
+    <div class="relative z-10 max-w-6xl mx-auto px-4 py-6 md:py-12">
+        <!-- Logo and Title -->
+        <div class="text-center mb-8 md:mb-12 fade-in">
+            <h1 class="brand-logo text-3xl md:text-5xl lg:text-7xl mb-4 md:mb-6">
+                <span class="gold-gradient glow">FOMUS PARURE</span>
+            </h1>
+            <div class="text-lg md:text-2xl lg:text-3xl font-light mb-4 md:mb-6">
+                <span class="text-fomus-dark/90">Select Your Language</span>
+            </div>
+            <p class="text-sm md:text-lg lg:text-xl text-fomus-gray font-light px-4 mb-2">
+                Experience 1300 Years of Japanese Craftsmanship in Your Language
+            </p>
+            <p class="text-xs md:text-sm text-fomus-accent px-4">
+                お好みの言語を選択して、1300年の職人技をご体験ください
+            </p>
+        </div>
+        
+        <!-- Language cards -->
+        <div class="grid grid-cols-2 sm:grid-cols-5 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 mb-6 md:mb-12">
+            <!-- Japanese -->
+            <a href="index-ja.html" class="language-card rounded-xl md:rounded-2xl p-4 md:p-8 text-center block slide-up cursor-pointer" style="animation-delay: 0.1s;" data-lang="ja" aria-label="Japanese Language">
+                <div class="corner-decoration top-left"></div>
+                <div class="corner-decoration bottom-right"></div>
+                <div class="text-3xl md:text-5xl mb-2 md:mb-4">🇯🇵</div>
+                <h2 class="text-lg md:text-2xl font-light mb-1 md:mb-2 text-fomus-gold">日本語</h2>
+                <p class="text-fomus-gray/70 text-xs md:text-sm hidden md:block">Japanese</p>
+                <div class="mt-2 text-xs text-fomus-accent/60 hidden md:block">母国語</div>
+            </a>
+            
+            <!-- English -->
+            <a href="index-en.html" class="language-card rounded-xl md:rounded-2xl p-4 md:p-8 text-center block slide-up cursor-pointer" style="animation-delay: 0.2s;" data-lang="en" aria-label="English Language">
+                <div class="corner-decoration top-left"></div>
+                <div class="corner-decoration bottom-right"></div>
+                <div class="text-3xl md:text-5xl mb-2 md:mb-4">🇺🇸</div>
+                <h2 class="text-lg md:text-2xl font-light mb-1 md:mb-2 text-fomus-gold">English</h2>
+                <p class="text-fomus-gray/70 text-xs md:text-sm hidden md:block">英語</p>
+                <div class="mt-2 text-xs text-fomus-accent/60 hidden md:block">International</div>
+            </a>
+            
+            <!-- Arabic -->
+            <a href="index-ar.html" class="language-card rounded-xl md:rounded-2xl p-4 md:p-8 text-center block slide-up cursor-pointer" style="animation-delay: 0.3s;" data-lang="ar" aria-label="Arabic Language">
+                <div class="corner-decoration top-left"></div>
+                <div class="corner-decoration bottom-right"></div>
+                <div class="text-3xl md:text-5xl mb-2 md:mb-4">🇸🇦</div>
+                <h2 class="text-lg md:text-2xl font-arabic font-light mb-1 md:mb-2 text-fomus-gold">العربية</h2>
+                <p class="text-fomus-gray/70 text-xs md:text-sm hidden md:block">Arabic</p>
+                <div class="mt-2 text-xs text-fomus-accent/60 hidden md:block">عربي</div>
+            </a>
+            
+            <!-- Chinese -->
+            <a href="index-zh.html" class="language-card rounded-xl md:rounded-2xl p-4 md:p-8 text-center block slide-up cursor-pointer" style="animation-delay: 0.4s;" data-lang="zh" aria-label="Chinese Language">
+                <div class="corner-decoration top-left"></div>
+                <div class="corner-decoration bottom-right"></div>
+                <div class="text-3xl md:text-5xl mb-2 md:mb-4">🇨🇳</div>
+                <h2 class="text-lg md:text-2xl font-chinese font-light mb-1 md:mb-2 text-fomus-gold">中文</h2>
+                <p class="text-fomus-gray/70 text-xs md:text-sm hidden md:block">Chinese</p>
+                <div class="mt-2 text-xs text-fomus-accent/60 hidden md:block">中国人</div>
+            </a>
+            
+            <!-- French -->
+            <a href="index-fr.html" class="language-card rounded-xl md:rounded-2xl p-4 md:p-8 text-center block slide-up cursor-pointer" style="animation-delay: 0.5s;" data-lang="fr" aria-label="French Language">
+                <div class="corner-decoration top-left"></div>
+                <div class="corner-decoration bottom-right"></div>
+                <div class="text-3xl md:text-5xl mb-2 md:mb-4">🇫🇷</div>
+                <h2 class="text-lg md:text-2xl font-light mb-1 md:mb-2 text-fomus-gold">Français</h2>
+                <p class="text-fomus-gray/70 text-xs md:text-sm hidden md:block">French</p>
+                <div class="mt-2 text-xs text-fomus-accent/60 hidden md:block">Français</div>
+            </a>
+        </div>
+        
+        <!-- Footer message -->
+        <div class="text-center fade-in" style="animation-delay: 0.8s;">
+            <p class="text-fomus-gray/70 text-xs md:text-sm px-4 mb-2">
+                More than Jewelry, It's a Cultural Heritage.
+            </p>
+            <p class="text-fomus-accent/60 text-xs px-4">
+                Your language preference will be saved for future visits.
+            </p>
+        </div>
+    </div>
+    
+    <script src="js/security-utils.js"></script>
+    <script src="js/mobile-premium.js"></script>
+    <script>
+        // Simple language selection with visual effects
+        document.querySelectorAll('.language-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Visual feedback
+                this.style.transform = 'scale(0.95)';
+                this.style.background = 'rgba(212, 175, 55, 0.15)';
+                
+                // Show loading overlay
+                const loadingOverlay = document.getElementById('loadingOverlay');
+                setTimeout(() => {
+                    loadingOverlay.classList.add('active');
+                }, 200);
+                
+                // Navigate to selected language page
+                setTimeout(() => {
+                    window.location.href = this.href;
+                }, 800);
+                
+                // Analytics tracking
+                if (typeof gtag !== 'undefined') {
+                    const lang = this.dataset.lang;
+                    gtag('event', 'language_selection', {
+                        'event_category': 'internationalization',
+                        'event_label': lang,
+                        'event_context': 'language_select_page'
+                    });
+                }
+            });
+        });
+        
+        // Focus first language option for accessibility
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                const firstCard = document.querySelector('.language-card');
+                if (firstCard) firstCard.focus();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
